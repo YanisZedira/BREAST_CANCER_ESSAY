@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎯 Essay Guide — AI & Breast Cancer Diagnosis | Guide Complet + Flashcards</title>
+  <meta name="description" content="Guide ultime pour réussir l'essay sur l'IA et le diagnostic du cancer du sein. Méthode 5 Moves + phrases prêtes + rappels exposé + essay modèle + flashcards." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --surface:#0f172a;
+      --panel:#111b33;
+      --text:#e6eaf2;
+      --muted:#a3adc2;
+      --link:#7aa2ff;
+      --accent:#38bdf8;
+      --accent-2:#2dd4bf;
+      --accent-3:#f472b6;
+      --warn:#fbbf24;
+      --ok:#34d399;
+      --danger:#fb7185;
+      --chip:#17233e;
+      --border:#1d2a44;
+      --shadow: 0 10px 28px rgba(0,0,0,.35);
+      --radius:16px;
+      --r-sm:12px;
+    }
+    [data-theme="light"]{
+      --bg:#f7fafc;
+      --surface:#ffffff;
+      --panel:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --link:#2563eb;
+      --accent:#0ea5e9;
+      --accent-2:#14b8a6;
+      --accent-3:#ec4899;
+      --warn:#f59e0b;
+      --ok:#22c55e;
+      --danger:#f43f5e;
+      --chip:#e2e8f0;
+      --border:#e5e7eb;
+      --shadow: 0 10px 28px rgba(15, 23, 42, .08);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; background:var(--bg); color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial;
+      line-height:1.6}
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1280px; margin:0 auto; padding:20px}
+
+    /* Header */
+    header.hero{
+      background:linear-gradient(135deg, rgba(244,114,182,.15), rgba(56,189,248,.15), rgba(45,212,191,.1));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      margin-bottom:24px;
+      box-shadow:var(--shadow);
+    }
+    .hero h1{margin:0 0 8px; font-size:clamp(24px, 4vw, 38px); line-height:1.2}
+    .hero h1 .highlight{background:linear-gradient(90deg, var(--accent-3), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .hero .sub{margin:0 0 16px; color:var(--muted); font-size:16px}
+    .hero-badges{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px}
+    .hero-badge{background:var(--chip); border:1px solid var(--border); padding:6px 12px; border-radius:20px; font-size:13px; font-weight:600}
+    .toolbar{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      appearance:none; border:1px solid var(--border); background:var(--surface);
+      color:var(--text); padding:10px 16px; border-radius:12px; cursor:pointer;
+      font-weight:700; font-size:14px; box-shadow:var(--shadow); 
+      transition:.2s transform, .2s box-shadow;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff; border:none}
+    .btn.warn{background:var(--warn); color:#1a1a1a; border:none}
+    .btn.success{background:var(--ok); color:#00261a; border:none}
+    .btn.pink{background:linear-gradient(135deg, var(--accent-3), #a855f7); color:#fff; border:none}
+
+    /* Grid layout */
+    .main-grid{display:grid; grid-template-columns:1fr; gap:24px}
+    @media(min-width:1100px){.main-grid{grid-template-columns:420px 1fr}}
+
+    /* Flashcard Panel */
+    .fc-panel{
+      background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+      padding:20px; box-shadow:var(--shadow); position:sticky; top:20px; align-self:start;
+    }
+    .fc-header{margin-bottom:12px}
+    .fc-title{margin:0 0 4px; font-size:20px; display:flex; align-items:center; gap:10px}
+    .fc-subtitle{color:var(--muted); font-size:13px}
+    .fc-stats{display:flex; gap:8px; flex-wrap:wrap; margin:12px 0}
+    .fc-stat{background:var(--chip); border:1px solid var(--border); padding:6px 12px; border-radius:20px; font-size:12px; font-weight:700}
+    .fc-stat b{color:var(--accent)}
+    .progress-bar{height:8px; background:var(--chip); border-radius:10px; overflow:hidden; margin:8px 0}
+    .progress-bar .fill{height:100%; background:linear-gradient(90deg, var(--accent-3), var(--accent), var(--accent-2)); transition:.3s width}
+    .fc-controls{display:flex; gap:8px; flex-wrap:wrap; margin:12px 0}
+    .fc-controls .btn{padding:8px 12px; font-size:13px}
+    .fc-card-container{perspective:1200px; margin-top:12px}
+    .fc-card{
+      position:relative; width:100%; min-height:300px; border-radius:16px;
+      transform-style:preserve-3d; transition:transform .6s; cursor:pointer;
+      background:linear-gradient(145deg, rgba(244,114,182,.08), rgba(56,189,248,.08));
+      border:1px solid var(--border); box-shadow:var(--shadow);
+    }
+    .fc-card.flipped{transform:rotateY(180deg)}
+    .fc-face{
+      position:absolute; inset:0; padding:20px; backface-visibility:hidden;
+      display:flex; flex-direction:column; justify-content:center;
+      overflow-y:auto;
+    }
+    .fc-face.back{transform:rotateY(180deg)}
+    .fc-question{font-size:18px; font-weight:800; line-height:1.4}
+    .fc-answer{font-size:14px; line-height:1.8; white-space:pre-line}
+    .fc-hint{color:var(--muted); font-size:12px; margin-top:12px}
+    .fc-actions{display:flex; gap:10px; margin-top:16px}
+    .key{
+      display:inline-block; background:var(--chip); border:1px solid var(--border);
+      padding:2px 8px; border-radius:6px; font-family:monospace; font-size:11px; color:var(--muted);
+    }
+
+    /* Cards / Sections */
+    .card{
+      background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+      padding:24px; box-shadow:var(--shadow); margin-bottom:20px; position:relative;
+    }
+    .card h2{margin:0 0 16px; font-size:clamp(20px, 3vw, 26px); display:flex; align-items:center; gap:12px}
+    .card h3{margin:20px 0 12px; color:var(--accent); font-size:18px}
+    .card h4{margin:16px 0 10px; color:var(--accent-2); font-size:16px}
+    .section-number{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:36px; height:36px; background:linear-gradient(135deg, var(--accent-3), var(--accent));
+      color:#fff; border-radius:10px; font-weight:800; font-size:16px;
+    }
+
+    /* Navigation */
+    .nav-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin:16px 0}
+    .nav-item{
+      background:var(--surface); border:1px solid var(--border); border-radius:12px;
+      padding:12px; text-align:center; font-weight:700; font-size:13px;
+      transition:.2s transform, .2s box-shadow; cursor:pointer;
+    }
+    .nav-item:hover{transform:translateY(-2px); box-shadow:var(--shadow); text-decoration:none}
+    .nav-item .icon{font-size:24px; display:block; margin-bottom:6px}
+
+    /* Callouts */
+    .callout{
+      border-left:5px solid var(--accent); background:linear-gradient(90deg, rgba(56,189,248,.1), transparent);
+      padding:16px; border-radius:var(--r-sm); margin:16px 0;
+    }
+    .callout.pink{border-left-color:var(--accent-3); background:linear-gradient(90deg, rgba(244,114,182,.1), transparent)}
+    .callout.green{border-left-color:var(--ok); background:linear-gradient(90deg, rgba(52,211,153,.1), transparent)}
+    .callout.warn{border-left-color:var(--warn); background:linear-gradient(90deg, rgba(251,191,36,.1), transparent)}
+    .callout.danger{border-left-color:var(--danger); background:linear-gradient(90deg, rgba(251,113,133,.1), transparent)}
+    .callout-title{font-weight:800; margin-bottom:8px; display:flex; align-items:center; gap:8px}
+
+    /* Bilingual boxes */
+    .bilingual{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px; margin:10px 0}
+    .bilingual .en{color:var(--accent); font-weight:700; font-size:15px; margin-bottom:6px}
+    .bilingual .fr{color:var(--muted); font-size:14px; font-style:italic}
+
+    /* Phrase boxes */
+    .phrase-box{
+      background:linear-gradient(135deg, rgba(56,189,248,.05), rgba(45,212,191,.05));
+      border:1px solid var(--border); border-radius:12px; padding:14px; margin:10px 0;
+    }
+    .phrase-box.pink{background:linear-gradient(135deg, rgba(244,114,182,.08), rgba(168,85,247,.05))}
+    .phrase-box .label{font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px}
+    .phrase-box .eng{font-weight:700; color:var(--accent); font-size:15px}
+    .phrase-box .trad{color:var(--muted); font-size:13px; margin-top:4px}
+
+    /* Tables */
+    table{width:100%; border-collapse:collapse; margin:16px 0; font-size:14px}
+    th,td{border:1px solid var(--border); padding:12px; text-align:left}
+    th{background:var(--chip); color:var(--accent); font-weight:700}
+    tr:hover{background:rgba(56,189,248,.05)}
+
+    /* Lists */
+    ul,ol{margin:10px 0; padding-left:24px}
+    li{margin-bottom:8px}
+
+    /* Badges */
+    .badge{
+      display:inline-block; background:var(--chip); border:1px solid var(--border);
+      padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; margin:4px 4px 4px 0;
+    }
+    .badge.move1{background:rgba(56,189,248,.2); color:var(--accent)}
+    .badge.move2{background:rgba(45,212,191,.2); color:var(--accent-2)}
+    .badge.move3{background:rgba(251,113,133,.2); color:var(--danger)}
+    .badge.move4{background:rgba(167,139,250,.2); color:#a78bfa}
+    .badge.move5{background:rgba(251,191,36,.2); color:var(--warn)}
+    .badge.key{background:rgba(244,114,182,.2); color:var(--accent-3)}
+
+    /* Essay Model */
+    .essay-container{background:var(--surface); border:2px solid var(--accent); border-radius:16px; padding:24px; margin:20px 0}
+    .essay-container h3{color:var(--accent-3); margin-top:0}
+    .essay-para{margin:16px 0; padding:16px; background:var(--chip); border-radius:12px; border-left:4px solid var(--accent)}
+    .essay-para.intro{border-left-color:var(--accent)}
+    .essay-para.motiv{border-left-color:var(--accent-2)}
+    .essay-para.risk{border-left-color:var(--danger)}
+    .essay-para.solution{border-left-color:#a78bfa}
+    .essay-para.conclusion{border-left-color:var(--warn)}
+    .essay-label{font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; display:flex; align-items:center; gap:8px}
+    .essay-text{font-size:15px; line-height:1.8}
+    .essay-text .highlight{background:rgba(251,191,36,.3); padding:0 4px; border-radius:4px}
+    .essay-text .connector{color:var(--accent-3); font-weight:700}
+    .essay-text .vocab{color:var(--accent-2); font-weight:600}
+
+    /* Mnemo boxes */
+    .mnemo{background:var(--chip); border:1px solid var(--border); border-radius:12px; padding:16px; margin:16px 0}
+    .mnemo-title{font-weight:800; color:var(--warn); margin-bottom:10px; display:flex; align-items:center; gap:8px}
+
+    /* Checklist */
+    .checklist{list-style:none; padding:0; margin:16px 0}
+    .checklist li{padding:10px 0; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px}
+    .checklist li:last-child{border-bottom:none}
+    .check-icon{font-size:20px}
+
+    /* Keywords grid */
+    .keywords-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:12px; margin:16px 0}
+    .keyword-card{
+      background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px;
+      transition:.2s transform;
+    }
+    .keyword-card:hover{transform:translateY(-2px)}
+    .keyword-card .term{font-weight:800; color:var(--accent); margin-bottom:4px}
+    .keyword-card .def{font-size:13px; color:var(--muted)}
+
+    /* Copy button */
+    .copy-btn{
+      position:absolute; top:12px; right:12px; background:var(--chip);
+      border:1px solid var(--border); border-radius:8px; padding:6px 10px;
+      font-size:12px; cursor:pointer; opacity:0.7; transition:.2s;
+    }
+    .copy-btn:hover{opacity:1}
+
+    /* Print styles */
+    @media print{
+      .fc-panel, .toolbar, .copy-btn, .nav-grid{display:none !important}
+      .main-grid{grid-template-columns:1fr}
+      body{background:#fff; color:#000}
+      .card, .hero{box-shadow:none; border:1px solid #ddd; break-inside:avoid}
+    }
+  </style>
+</head>
+<body data-theme="dark">
+<div class="container">
+  
+  <!-- HEADER -->
+  <header class="hero">
+    <h1>🎯 <span class="highlight">Essay Guide Ultime</span><br>AI & Breast Cancer Diagnosis</h1>
+    <p class="sub">Tout ce qu'il te faut pour avoir 20/20 : méthode, phrases prêtes, vocabulaire, rappel de l'exposé, essay modèle complet + flashcards</p>
+    <div class="hero-badges">
+      <span class="hero-badge">📚 5 Moves Method</span>
+      <span class="hero-badge">🔬 Study: Gjesvik et al. 2024</span>
+      <span class="hero-badge">🧠 85+ Flashcards</span>
+      <span class="hero-badge">✍️ Essay Modèle Complet</span>
+    </div>
+    <div class="toolbar">
+      <button class="btn" id="toggleTheme">🌗 Theme</button>
+      <button class="btn warn" id="btnPrint">🖨️ PDF</button>
+      <button class="btn pink" id="btnScrollFC">🃏 Flashcards</button>
+      <button class="btn primary" onclick="document.getElementById('model-essay').scrollIntoView({behavior:'smooth'})">✍️ Essay Modèle</button>
+    </div>
+  </header>
+
+  <div class="main-grid">
+    
+    <!-- ========== FLASHCARDS PANEL ========== -->
+    <aside class="fc-panel" id="flashcards">
+      <div class="fc-header">
+        <h2 class="fc-title">🃏 Flashcards <span style="color:var(--accent-3)">AI & Cancer</span></h2>
+        <p class="fc-subtitle"><span class="key">Espace</span> flip · <span class="key">J</span> su · <span class="key">K</span> revoir · <span class="key">→</span> suivant</p>
+      </div>
+      
+      <div class="fc-stats">
+        <span class="fc-stat">Score: <b id="score">0</b></span>
+        <span class="fc-stat">Carte: <b id="cardIndex">1</b>/<b id="cardTotal">0</b></span>
+        <span class="fc-stat">À revoir: <b id="todoCount">0</b></span>
+      </div>
+      
+      <div class="progress-bar"><div class="fill" id="progressBar" style="width:0%"></div></div>
+      
+      <div class="fc-controls">
+        <button class="btn" id="btnPrev">⬅️</button>
+        <button class="btn" id="btnFlip">🔄 Flip</button>
+        <button class="btn" id="btnNext">➡️</button>
+        <button class="btn" id="btnShuffle">🎲</button>
+        <button class="btn" id="btnSpeak">🔊</button>
+      </div>
+      
+      <label style="display:flex; align-items:center; gap:8px; font-size:13px; margin:8px 0">
+        <input type="checkbox" id="onlyTodo" style="transform:scale(1.2)"> À revoir uniquement
+      </label>
+      
+      <div class="fc-card-container">
+        <div class="fc-card" id="fcCard">
+          <div class="fc-face front">
+            <div class="fc-question" id="fcQuestion">Chargement...</div>
+            <div class="fc-hint">Clique ou appuie sur Espace pour retourner</div>
+          </div>
+          <div class="fc-face back">
+            <div class="fc-answer" id="fcAnswer">...</div>
+            <div class="fc-actions">
+              <button class="btn success" id="btnKnow">👍 Su !</button>
+              <button class="btn" id="btnAgain">👀 À revoir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+      
+      <!-- NAVIGATION -->
+      <div class="card">
+        <h2>📍 Navigation Rapide</h2>
+        <div class="nav-grid">
+          <a href="#rappel" class="nav-item"><span class="icon">🔬</span>Rappel Exposé</a>
+          <a href="#keywords" class="nav-item"><span class="icon">📖</span>Vocabulaire Clé</a>
+          <a href="#method" class="nav-item"><span class="icon">📐</span>Méthode Essay</a>
+          <a href="#questions" class="nav-item"><span class="icon">❓</span>Questions Possibles</a>
+          <a href="#phrases" class="nav-item"><span class="icon">💬</span>Phrases Prêtes</a>
+          <a href="#model-essay" class="nav-item"><span class="icon">✍️</span>Essay Modèle</a>
+          <a href="#checklist" class="nav-item"><span class="icon">✅</span>Checklist Finale</a>
+        </div>
+      </div>
+
+      <!-- ========== SECTION 1: RAPPEL EXPOSÉ ========== -->
+      <section class="card" id="rappel">
+        <button class="copy-btn" onclick="copySection('rappel')">📋 Copier</button>
+        <h2><span class="section-number">1</span> Rappel de ton Exposé — Key Points</h2>
+        
+        <div class="callout pink">
+          <div class="callout-title">🎯 Question centrale de l'étude</div>
+          <div class="bilingual">
+            <p class="en">Can AI detect invisible clues in "normal" mammograms that predict future breast cancer risk?</p>
+            <p class="fr">→ L'IA peut-elle détecter des indices invisibles dans des mammographies "normales" qui prédisent un risque futur de cancer du sein ?</p>
+          </div>
+        </div>
+
+        <h3>📄 L'Article Étudié</h3>
+        <div class="bilingual">
+          <p class="en"><strong>Title:</strong> "Association of Artificial Intelligence Risk Scores With Future Breast Cancer Among Women With No Radiologic Evidence of Malignancy at Screening Mammography"</p>
+          <p class="fr">→ "Association des scores de risque d'IA avec le cancer du sein futur chez les femmes sans preuve radiologique de malignité lors de la mammographie de dépistage"</p>
+        </div>
+        <ul>
+          <li><strong>Publication:</strong> JAMA Network Open, 2024</li>
+          <li><strong>Authors:</strong> Jonas Gjesvik et son équipe (Norwegian researchers / chercheurs norvégiens)</li>
+          <li><strong>AI Software:</strong> Lunit INSIGHT MMG</li>
+        </ul>
+
+        <h3>🔬 Concept Clé: Interval Cancer / Cancer d'intervalle</h3>
+        <div class="bilingual">
+          <p class="en"><strong>Interval cancer:</strong> A cancer that develops between two screenings and escapes conventional detection. These cases are often more aggressive and harder to treat because they are detected late.</p>
+          <p class="fr">→ <strong>Cancer d'intervalle :</strong> Un cancer qui se développe entre deux dépistages et échappe à la détection classique. Ces cas sont souvent plus agressifs et plus difficiles à traiter car détectés tardivement.</p>
+        </div>
+
+        <h3>📊 Méthodologie de l'Étude</h3>
+        <table>
+          <tr>
+            <th>Aspect</th>
+            <th>English</th>
+            <th>Français</th>
+          </tr>
+          <tr>
+            <td><strong>Type</strong></td>
+            <td>Retrospective study</td>
+            <td>Étude rétrospective</td>
+          </tr>
+          <tr>
+            <td><strong>Sample size</strong></td>
+            <td>116,000+ women</td>
+            <td>Plus de 116 000 femmes</td>
+          </tr>
+          <tr>
+            <td><strong>Period</strong></td>
+            <td>2004-2018</td>
+            <td>2004-2018</td>
+          </tr>
+          <tr>
+            <td><strong>Location</strong></td>
+            <td>Norwegian national screening program</td>
+            <td>Programme national de dépistage norvégien</td>
+          </tr>
+          <tr>
+            <td><strong>AI tool</strong></td>
+            <td>Lunit INSIGHT MMG</td>
+            <td>Lunit INSIGHT MMG</td>
+          </tr>
+          <tr>
+            <td><strong>Score range</strong></td>
+            <td>0 to 100 (risk score)</td>
+            <td>0 à 100 (score de risque)</td>
+          </tr>
+        </table>
+
+        <h3>📈 Résultats Majeurs / Major Findings</h3>
+        <div class="callout green">
+          <div class="callout-title">✅ Key Finding</div>
+          <div class="bilingual">
+            <p class="en">Women who later developed cancer already had <strong>higher AI risk scores</strong> on their first "normal" mammograms. The score increased progressively, exceeding 80 just before diagnosis.</p>
+            <p class="fr">→ Les femmes qui ont développé un cancer plus tard avaient déjà des <strong>scores de risque IA plus élevés</strong> sur leurs premières mammographies "normales". Le score augmentait progressivement, dépassant 80 juste avant le diagnostic.</p>
+          </div>
+        </div>
+        <div class="bilingual">
+          <p class="en"><strong>Interpretation:</strong> AI can detect extremely fine patterns in breast texture — a biological signature of risk, imperceptible to the human eye.</p>
+          <p class="fr">→ <strong>Interprétation :</strong> L'IA peut détecter des motifs extrêmement fins dans la texture du sein — une signature biologique du risque, imperceptible à l'œil humain.</p>
+        </div>
+
+        <h3>⚠️ Limites de l'Étude / Study Limitations</h3>
+        <div class="callout warn">
+          <div class="callout-title">⚠️ Limitation 1: Population Bias / Biais de population</div>
+          <div class="bilingual">
+            <p class="en">The AI was tested only on a Norwegian population, relatively homogeneous. Results cannot be generalized without validation on populations of other ethnic origins or with denser breasts.</p>
+            <p class="fr">→ L'IA a été testée uniquement sur une population norvégienne, relativement homogène. Les résultats ne peuvent pas être généralisés sans validation sur des populations d'autres origines ethniques ou ayant des seins plus denses.</p>
+          </div>
+        </div>
+        <div class="callout warn">
+          <div class="callout-title">⚠️ Limitation 2: Retrospective Nature / Nature rétrospective</div>
+          <div class="bilingual">
+            <p class="en">The analysis was done on past images. Prospective studies under real conditions are needed to verify if AI scores can improve screening and lead to earlier diagnosis.</p>
+            <p class="fr">→ L'analyse a été faite sur des images du passé. Des études prospectives en conditions réelles sont nécessaires pour vérifier si les scores IA peuvent améliorer le dépistage et mener à un diagnostic plus précoce.</p>
+          </div>
+        </div>
+
+        <h3>🎯 Conclusion de l'Étude / Study Conclusion</h3>
+        <div class="callout pink">
+          <div class="callout-title">💡 Message Principal</div>
+          <div class="bilingual">
+            <p class="en">AI can become a tool to classify patients according to their risk level. <strong>AI does not replace the pathologist or radiologist — it provides a score.</strong> It is up to the healthcare professional to interpret it, cross-reference it with other data, and communicate results in an ethical, human way adapted to each patient.</p>
+            <p class="fr">→ L'IA peut devenir un outil pour classer les patientes selon leur niveau de risque. <strong>L'IA ne remplace pas le pathologiste ou le radiologue — elle fournit un score.</strong> C'est au professionnel de santé de l'interpréter, de le croiser avec d'autres données, et de communiquer les résultats de manière éthique et humaine, adaptée à chaque patiente.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 2: VOCABULAIRE CLÉ ========== -->
+      <section class="card" id="keywords">
+        <button class="copy-btn" onclick="copySection('keywords')">📋 Copier</button>
+        <h2><span class="section-number">2</span> Vocabulaire Clé — Essential Keywords</h2>
+        
+        <h3>🏥 Medical Terms / Termes Médicaux</h3>
+        <div class="keywords-grid">
+          <div class="keyword-card">
+            <div class="term">Mammography / Mammographie</div>
+            <div class="def">X-ray imaging of the breast for screening / Imagerie par rayons X du sein pour le dépistage</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Breast cancer / Cancer du sein</div>
+            <div class="def">Malignant tumor in breast tissue / Tumeur maligne dans le tissu mammaire</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Interval cancer / Cancer d'intervalle</div>
+            <div class="def">Cancer detected between screenings / Cancer détecté entre deux dépistages</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Screening / Dépistage</div>
+            <div class="def">Regular examination to detect disease early / Examen régulier pour détecter une maladie précocement</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Diagnosis / Diagnostic</div>
+            <div class="def">Identification of a disease / Identification d'une maladie</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Pathologist / Pathologiste</div>
+            <div class="def">Doctor who examines tissue samples / Médecin qui examine des échantillons de tissus</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Radiologist / Radiologue</div>
+            <div class="def">Doctor specialized in medical imaging / Médecin spécialisé en imagerie médicale</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Malignancy / Malignité</div>
+            <div class="def">Cancerous nature of a tumor / Nature cancéreuse d'une tumeur</div>
+          </div>
+        </div>
+
+        <h3>🤖 AI & Technology Terms / Termes IA & Technologie</h3>
+        <div class="keywords-grid">
+          <div class="keyword-card">
+            <div class="term">Artificial Intelligence (AI) / Intelligence Artificielle (IA)</div>
+            <div class="def">Computer systems that mimic human intelligence / Systèmes informatiques qui imitent l'intelligence humaine</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Risk score / Score de risque</div>
+            <div class="def">Numerical value indicating probability of disease / Valeur numérique indiquant la probabilité de maladie</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Algorithm / Algorithme</div>
+            <div class="def">Set of rules followed by a computer / Ensemble de règles suivies par un ordinateur</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Pattern recognition / Reconnaissance de motifs</div>
+            <div class="def">AI ability to identify patterns in data / Capacité de l'IA à identifier des motifs dans les données</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Pixel analysis / Analyse de pixels</div>
+            <div class="def">Examination of individual image elements / Examen des éléments individuels d'une image</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Predictive model / Modèle prédictif</div>
+            <div class="def">System that forecasts future outcomes / Système qui prédit des résultats futurs</div>
+          </div>
+        </div>
+
+        <h3>🔬 Research Terms / Termes de Recherche</h3>
+        <div class="keywords-grid">
+          <div class="keyword-card">
+            <div class="term">Retrospective study / Étude rétrospective</div>
+            <div class="def">Analysis of past data / Analyse de données passées</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Prospective study / Étude prospective</div>
+            <div class="def">Study following subjects over time / Étude suivant des sujets dans le temps</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Population bias / Biais de population</div>
+            <div class="def">Skewed results due to sample characteristics / Résultats faussés dus aux caractéristiques de l'échantillon</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Validation / Validation</div>
+            <div class="def">Confirmation that results are reliable / Confirmation que les résultats sont fiables</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Sample / Échantillon</div>
+            <div class="def">Subset of population studied / Sous-ensemble de la population étudiée</div>
+          </div>
+          <div class="keyword-card">
+            <div class="term">Findings / Résultats</div>
+            <div class="def">Discoveries from research / Découvertes issues de la recherche</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 3: MÉTHODE ESSAY ========== -->
+      <section class="card" id="method">
+        <button class="copy-btn" onclick="copySection('method')">📋 Copier</button>
+        <h2><span class="section-number">3</span> Méthode Essay — Les 5 Moves</h2>
+        
+        <div class="mnemo">
+          <div class="mnemo-title">🧠 Mnémotechnique : "IMRSF" = I Must Really Study First</div>
+          <p><strong>I</strong>ntroduce → <strong>M</strong>otivations → <strong>R</strong>isks → <strong>S</strong>olution → <strong>F</strong>orward</p>
+        </div>
+
+        <h3><span class="badge move1">MOVE 1</span> Introduce the Phenomenon</h3>
+        <div class="callout">
+          <p><strong>Objectif :</strong> Définir le sujet + Donner le contexte + Rester NEUTRE</p>
+          <p><strong>Pour ce sujet :</strong> Définir l'IA dans le diagnostic médical, expliquer le contexte du dépistage du cancer du sein, mentionner l'étude de Gjesvik</p>
+        </div>
+
+        <h3><span class="badge move2">MOVE 2</span> Present Motivations</h3>
+        <div class="callout">
+          <p><strong>Objectif :</strong> Expliquer POURQUOI on utilise l'IA dans ce domaine</p>
+          <p><strong>Pour ce sujet :</strong> Limites de l'œil humain, cancers d'intervalle manqués, besoin de détection précoce, volume croissant de mammographies</p>
+        </div>
+
+        <h3><span class="badge move3">MOVE 3</span> State Risks / Problems</h3>
+        <div class="callout">
+          <p><strong>Objectif :</strong> Présenter les risques et limites</p>
+          <p><strong>Pour ce sujet :</strong> Biais de population, nature rétrospective, questions éthiques, risque de sur-dépendance à la technologie, anxiété des patientes</p>
+        </div>
+
+        <h3><span class="badge move4">MOVE 4</span> Provide Solution</h3>
+        <div class="callout">
+          <p><strong>Objectif :</strong> Proposer une approche équilibrée et réaliste</p>
+          <p><strong>Pour ce sujet :</strong> IA comme OUTIL d'aide (pas de remplacement), collaboration humain-machine, études prospectives nécessaires, validation sur populations diverses</p>
+        </div>
+
+        <h3><span class="badge move5">MOVE 5</span> Forward Look / Conclusion</h3>
+        <div class="callout">
+          <p><strong>Objectif :</strong> Projeter vers l'avenir + Vision équilibrée</p>
+          <p><strong>Pour ce sujet :</strong> Médecine de précision, personnalisation du dépistage, importance de l'éthique, le professionnel reste au centre</p>
+        </div>
+
+        <h3>📐 Structure de chaque paragraphe : TS-SS-EX-L</h3>
+        <table>
+          <tr>
+            <th>Element</th>
+            <th>Role</th>
+            <th>Example for this topic</th>
+          </tr>
+          <tr>
+            <td><strong>TS</strong> = Topic Sentence</td>
+            <td>Main idea of the paragraph</td>
+            <td>"AI can detect subtle patterns in breast tissue that are invisible to the human eye."</td>
+          </tr>
+          <tr>
+            <td><strong>SS</strong> = Supporting Sentences</td>
+            <td>Explain and develop</td>
+            <td>"The Lunit INSIGHT software analyzes pixels to generate a risk score between 0 and 100..."</td>
+          </tr>
+          <tr>
+            <td><strong>EX</strong> = Example</td>
+            <td>Concrete illustration</td>
+            <td>"For instance, the Gjesvik study showed that women who developed cancer had higher scores from their first mammogram..."</td>
+          </tr>
+          <tr>
+            <td><strong>L</strong> = Linking Sentence</td>
+            <td>Transition to next paragraph</td>
+            <td>"However, despite these promising results, significant concerns have emerged..."</td>
+          </tr>
+        </table>
+
+        <div class="callout danger">
+          <div class="callout-title">❌ RAPPEL : Erreurs INTERDITES</div>
+          <ul>
+            <li>Jamais "I think", "I believe", "In my opinion"</li>
+            <li>Pas de contractions (don't → do not)</li>
+            <li>Pas de paragraphe sans exemple</li>
+            <li>Pas de solution irréaliste</li>
+            <li>Conclusion DOIT parler du futur</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 4: QUESTIONS POSSIBLES ========== -->
+      <section class="card" id="questions">
+        <button class="copy-btn" onclick="copySection('questions')">📋 Copier</button>
+        <h2><span class="section-number">4</span> Questions Possibles — Sois Prêt(e) !</h2>
+        
+        <div class="callout pink">
+          <div class="callout-title">🎯 Questions probables basées sur ton exposé</div>
+        </div>
+
+        <h3>📝 Questions générales sur l'IA et le diagnostic</h3>
+        <div class="phrase-box">
+          <div class="label">Question 1</div>
+          <div class="eng">Can AI improve breast cancer diagnosis without replacing pathologists?</div>
+          <div class="trad">→ L'IA peut-elle améliorer le diagnostic du cancer du sein sans remplacer les pathologistes ?</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Question 2</div>
+          <div class="eng">What are the benefits and risks of using AI in medical diagnosis?</div>
+          <div class="trad">→ Quels sont les avantages et les risques de l'utilisation de l'IA dans le diagnostic médical ?</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Question 3</div>
+          <div class="eng">Should AI be used to predict cancer risk? Discuss.</div>
+          <div class="trad">→ L'IA devrait-elle être utilisée pour prédire le risque de cancer ? Discutez.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Question 4</div>
+          <div class="eng">To what extent can AI enhance early detection of breast cancer?</div>
+          <div class="trad">→ Dans quelle mesure l'IA peut-elle améliorer la détection précoce du cancer du sein ?</div>
+        </div>
+
+        <h3>📝 Questions sur l'étude spécifique</h3>
+        <div class="phrase-box">
+          <div class="label">Question 5</div>
+          <div class="eng">What did the Gjesvik study reveal about AI and mammography screening?</div>
+          <div class="trad">→ Qu'a révélé l'étude de Gjesvik sur l'IA et le dépistage par mammographie ?</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Question 6</div>
+          <div class="eng">What are the limitations of AI-based cancer risk prediction?</div>
+          <div class="trad">→ Quelles sont les limites de la prédiction du risque de cancer basée sur l'IA ?</div>
+        </div>
+
+        <h3>📝 Questions éthiques et sociétales</h3>
+        <div class="phrase-box">
+          <div class="label">Question 7</div>
+          <div class="eng">What ethical considerations arise when using AI in healthcare?</div>
+          <div class="trad">→ Quelles considérations éthiques émergent lors de l'utilisation de l'IA dans les soins de santé ?</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Question 8</div>
+          <div class="eng">How should the relationship between AI and healthcare professionals evolve?</div>
+          <div class="trad">→ Comment la relation entre l'IA et les professionnels de santé devrait-elle évoluer ?</div>
+        </div>
+
+        <h3>📝 Questions sur l'avenir</h3>
+        <div class="phrase-box">
+          <div class="label">Question 9</div>
+          <div class="eng">What role will AI play in the future of medical diagnosis?</div>
+          <div class="trad">→ Quel rôle l'IA jouera-t-elle dans l'avenir du diagnostic médical ?</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Question 10</div>
+          <div class="eng">How can we ensure AI is used responsibly in cancer screening?</div>
+          <div class="trad">→ Comment pouvons-nous garantir que l'IA est utilisée de manière responsable dans le dépistage du cancer ?</div>
+        </div>
+      </section>
+
+      <!-- ========== SECTION 5: PHRASES PRÊTES ========== -->
+      <section class="card" id="phrases">
+        <button class="copy-btn" onclick="copySection('phrases')">📋 Copier</button>
+        <h2><span class="section-number">5</span> Phrases Prêtes à Utiliser — Ready-Made Sentences</h2>
+        
+        <h3><span class="badge move1">MOVE 1</span> Introduction — Defining & Context</h3>
+        <div class="phrase-box pink">
+          <div class="label">Définition</div>
+          <div class="eng">Artificial intelligence in medical diagnosis refers to the use of computer algorithms to analyze medical images and detect patterns that may indicate disease.</div>
+          <div class="trad">→ L'intelligence artificielle dans le diagnostic médical fait référence à l'utilisation d'algorithmes informatiques pour analyser des images médicales et détecter des motifs pouvant indiquer une maladie.</div>
+        </div>
+        <div class="phrase-box pink">
+          <div class="label">Contexte</div>
+          <div class="eng">In recent years, there has been increasing attention to the potential of AI to improve breast cancer screening, particularly in detecting cancers that are missed by traditional methods.</div>
+          <div class="trad">→ Ces dernières années, une attention croissante a été portée au potentiel de l'IA pour améliorer le dépistage du cancer du sein, en particulier pour détecter les cancers manqués par les méthodes traditionnelles.</div>
+        </div>
+        <div class="phrase-box pink">
+          <div class="label">Référence à l'étude</div>
+          <div class="eng">A recent study by Gjesvik et al., published in JAMA Network Open in 2024, examined whether AI could predict future breast cancer risk from mammograms that appeared normal to radiologists.</div>
+          <div class="trad">→ Une étude récente de Gjesvik et al., publiée dans JAMA Network Open en 2024, a examiné si l'IA pouvait prédire le risque futur de cancer du sein à partir de mammographies qui semblaient normales aux radiologues.</div>
+        </div>
+        <div class="phrase-box pink">
+          <div class="label">Transition vers Move 2</div>
+          <div class="eng">To understand the growing interest in AI-assisted diagnosis, it is essential to examine the underlying motivations and current limitations of traditional screening methods.</div>
+          <div class="trad">→ Pour comprendre l'intérêt croissant pour le diagnostic assisté par IA, il est essentiel d'examiner les motivations sous-jacentes et les limites actuelles des méthodes de dépistage traditionnelles.</div>
+        </div>
+
+        <h3><span class="badge move2">MOVE 2</span> Motivations — Why AI is Needed</h3>
+        <div class="phrase-box">
+          <div class="label">Motivation principale</div>
+          <div class="eng">One of the main reasons healthcare systems are exploring AI is the limitation of the human eye in detecting subtle tissue changes that may indicate early cancer development.</div>
+          <div class="trad">→ L'une des principales raisons pour lesquelles les systèmes de santé explorent l'IA est la limitation de l'œil humain à détecter des changements tissulaires subtils pouvant indiquer un développement précoce du cancer.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Cancers d'intervalle</div>
+          <div class="eng">Furthermore, interval cancers — cancers that develop between screening appointments — represent a significant challenge, as they are often more aggressive and detected at later stages.</div>
+          <div class="trad">→ De plus, les cancers d'intervalle — cancers qui se développent entre les rendez-vous de dépistage — représentent un défi important, car ils sont souvent plus agressifs et détectés à des stades plus avancés.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Capacités de l'IA</div>
+          <div class="eng">AI systems can analyze thousands of images rapidly and identify patterns in breast tissue that constitute a biological signature of risk, imperceptible to human observers.</div>
+          <div class="trad">→ Les systèmes d'IA peuvent analyser des milliers d'images rapidement et identifier des motifs dans le tissu mammaire qui constituent une signature biologique du risque, imperceptible aux observateurs humains.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Résultats de l'étude</div>
+          <div class="eng">The Gjesvik study demonstrated that women who would later develop cancer already showed higher AI risk scores on their initial "normal" mammograms, with scores progressively increasing until diagnosis.</div>
+          <div class="trad">→ L'étude de Gjesvik a démontré que les femmes qui développeraient plus tard un cancer présentaient déjà des scores de risque IA plus élevés sur leurs mammographies "normales" initiales, avec des scores augmentant progressivement jusqu'au diagnostic.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Transition vers Move 3</div>
+          <div class="eng">However, despite these promising findings, significant concerns and limitations have emerged that must be carefully considered.</div>
+          <div class="trad">→ Cependant, malgré ces résultats prometteurs, des préoccupations et limitations significatives ont émergé qui doivent être soigneusement considérées.</div>
+        </div>
+
+        <h3><span class="badge move3">MOVE 3</span> Risks & Problems</h3>
+        <div class="phrase-box">
+          <div class="label">Biais de population</div>
+          <div class="eng">A key concern is population bias: the AI in the Gjesvik study was tested only on a Norwegian population, which is relatively homogeneous. Results cannot be generalized without validation on more diverse populations.</div>
+          <div class="trad">→ Une préoccupation majeure est le biais de population : l'IA dans l'étude de Gjesvik a été testée uniquement sur une population norvégienne, relativement homogène. Les résultats ne peuvent pas être généralisés sans validation sur des populations plus diverses.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Nature rétrospective</div>
+          <div class="eng">Additionally, the retrospective nature of the study means that the analysis was performed on past images. Prospective studies under real-world conditions are necessary to confirm whether AI scores can genuinely improve early detection.</div>
+          <div class="trad">→ De plus, la nature rétrospective de l'étude signifie que l'analyse a été effectuée sur des images passées. Des études prospectives en conditions réelles sont nécessaires pour confirmer si les scores IA peuvent véritablement améliorer la détection précoce.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Questions éthiques</div>
+          <div class="eng">Furthermore, ethical questions arise regarding patient anxiety: how should healthcare providers communicate a high-risk AI score to a patient whose mammogram shows no visible abnormalities?</div>
+          <div class="trad">→ En outre, des questions éthiques se posent concernant l'anxiété des patientes : comment les prestataires de soins devraient-ils communiquer un score de risque IA élevé à une patiente dont la mammographie ne montre aucune anomalie visible ?</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Risque de sur-dépendance</div>
+          <div class="eng">There is also a risk of over-reliance on technology, which could lead healthcare professionals to neglect their own clinical judgment and expertise.</div>
+          <div class="trad">→ Il existe également un risque de sur-dépendance à la technologie, ce qui pourrait amener les professionnels de santé à négliger leur propre jugement clinique et expertise.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Transition vers Move 4</div>
+          <div class="eng">Given these challenges, it is crucial to consider how AI can be integrated responsibly into clinical practice.</div>
+          <div class="trad">→ Étant donné ces défis, il est crucial de considérer comment l'IA peut être intégrée de manière responsable dans la pratique clinique.</div>
+        </div>
+
+        <h3><span class="badge move4">MOVE 4</span> Solutions</h3>
+        <div class="phrase-box">
+          <div class="label">IA comme outil</div>
+          <div class="eng">A safer approach would be to use AI as a supportive tool rather than a replacement for human expertise. AI provides a score; it is up to the healthcare professional to interpret it and combine it with other clinical data.</div>
+          <div class="trad">→ Une approche plus sûre serait d'utiliser l'IA comme un outil de soutien plutôt qu'un remplacement de l'expertise humaine. L'IA fournit un score ; c'est au professionnel de santé de l'interpréter et de le combiner avec d'autres données cliniques.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Validation nécessaire</div>
+          <div class="eng">To address the limitation of population bias, future research should focus on validating AI systems across diverse ethnic groups and breast tissue types.</div>
+          <div class="trad">→ Pour résoudre la limitation du biais de population, les recherches futures devraient se concentrer sur la validation des systèmes d'IA à travers divers groupes ethniques et types de tissus mammaires.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Communication éthique</div>
+          <div class="eng">Healthcare providers should receive training on how to communicate AI-generated risk scores to patients in an ethical, transparent, and supportive manner.</div>
+          <div class="trad">→ Les prestataires de soins devraient recevoir une formation sur la façon de communiquer les scores de risque générés par l'IA aux patientes de manière éthique, transparente et bienveillante.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Études prospectives</div>
+          <div class="eng">Prospective clinical trials are essential to determine whether AI-assisted screening leads to better patient outcomes, including earlier diagnosis and improved survival rates.</div>
+          <div class="trad">→ Des essais cliniques prospectifs sont essentiels pour déterminer si le dépistage assisté par IA conduit à de meilleurs résultats pour les patientes, y compris un diagnostic plus précoce et des taux de survie améliorés.</div>
+        </div>
+        <div class="phrase-box">
+          <div class="label">Transition vers Move 5</div>
+          <div class="eng">While these solutions offer promise, their effectiveness will depend on long-term commitment from healthcare systems, researchers, and policymakers.</div>
+          <div class="trad">→ Bien que ces solutions soient prometteuses, leur efficacité dépendra d'un engagement à long terme des systèmes de santé, des chercheurs et des décideurs politiques.</div>
+        </div>
+
+        <h3><span class="badge move5">MOVE 5</span> Conclusion — Forward Look</h3>
+        <div class="phrase-box pink">
+          <div class="label">Projection future</div>
+          <div class="eng">In the future, AI is likely to play an increasingly important role in personalized medicine, enabling healthcare providers to stratify patients according to their individual risk profiles.</div>
+          <div class="trad">→ À l'avenir, l'IA jouera probablement un rôle de plus en plus important dans la médecine personnalisée, permettant aux prestataires de soins de stratifier les patientes selon leurs profils de risque individuels.</div>
+        </div>
+        <div class="phrase-box pink">
+          <div class="label">Vision équilibrée</div>
+          <div class="eng">Overall, while AI offers significant opportunities to improve breast cancer detection, it also requires careful implementation to ensure that technology enhances rather than replaces human judgment.</div>
+          <div class="trad">→ Dans l'ensemble, bien que l'IA offre des opportunités significatives pour améliorer la détection du cancer du sein, elle nécessite également une mise en œuvre prudente pour garantir que la technologie améliore plutôt qu'elle ne remplace le jugement humain.</div>
+        </div>
+        <div class="phrase-box pink">
+          <div class="label">Phrase finale forte</div>
+          <div class="eng">Ultimately, the future of AI in breast cancer diagnosis depends not on choosing between human expertise and artificial intelligence, but on finding the optimal collaboration between the two.</div>
+          <div class="trad">→ En fin de compte, l'avenir de l'IA dans le diagnostic du cancer du sein ne dépend pas du choix entre l'expertise humaine et l'intelligence artificielle, mais de la recherche de la collaboration optimale entre les deux.</div>
+        </div>
+      </section>
+
+            <!-- ========== SECTION 6: MODEL ESSAY ========== -->
+            <section class="card" id="model-essay">
+              <button class="copy-btn" onclick="copySection('model-essay')">📋 Copier</button>
+              <h2><span class="section-number">6</span> ✍️ Essay Modèle Complet — Full Model Essay</h2>
+              
+              <div class="callout pink">
+                <div class="callout-title">🎯 Question traitée / Question addressed</div>
+                <p><strong>EN:</strong> Can AI improve breast cancer diagnosis without replacing pathologists? Discuss with reference to recent research.</p>
+                <p style="color:var(--muted); font-style:italic"><strong>FR:</strong> L'IA peut-elle améliorer le diagnostic du cancer du sein sans remplacer les pathologistes ? Discutez en référence à des recherches récentes.</p>
+              </div>
+      
+              <div class="essay-container">
+                
+                <!-- ==================== INTRODUCTION ==================== -->
+                <div class="essay-para intro">
+                  <div class="essay-label"><span class="badge move1">MOVE 1</span> INTRODUCTION</div>
+                  
+                  <h4 style="color:var(--accent); margin:12px 0 8px">🇬🇧 English Version</h4>
+                  <div class="essay-text">
+                    <span class="vocab">Artificial intelligence in medical diagnosis</span> refers to the use of computer algorithms to analyze medical images and detect patterns that may indicate disease. <span class="connector">In recent years</span>, there has been increasing attention to the potential of AI to improve breast cancer screening, particularly in detecting cancers that are missed by traditional methods. A significant study by <span class="highlight">Gjesvik et al., published in JAMA Network Open in 2024</span>, examined whether AI could predict future breast cancer risk from mammograms that appeared normal to radiologists. This development has raised important questions about the role of AI in healthcare and its relationship with medical professionals. <span class="connector">To understand</span> the growing interest in AI-assisted diagnosis, it is essential to examine the underlying motivations, potential risks, and how this technology might be responsibly integrated into clinical practice.
+                  </div>
+      
+                  <h4 style="color:var(--accent-3); margin:16px 0 8px">🇫🇷 Traduction Française</h4>
+                  <div class="essay-text" style="color:var(--muted); font-style:italic; border-left:3px solid var(--accent-3); padding-left:12px">
+                    <span class="vocab">L'intelligence artificielle dans le diagnostic médical</span> fait référence à l'utilisation d'algorithmes informatiques pour analyser des images médicales et détecter des motifs pouvant indiquer une maladie. <span class="connector">Ces dernières années</span>, une attention croissante a été portée au potentiel de l'IA pour améliorer le dépistage du cancer du sein, en particulier pour détecter les cancers manqués par les méthodes traditionnelles. Une étude significative de <span class="highlight">Gjesvik et al., publiée dans JAMA Network Open en 2024</span>, a examiné si l'IA pouvait prédire le risque futur de cancer du sein à partir de mammographies qui semblaient normales aux radiologues. Cette évolution a soulevé des questions importantes sur le rôle de l'IA dans les soins de santé et sa relation avec les professionnels médicaux. <span class="connector">Pour comprendre</span> l'intérêt croissant pour le diagnostic assisté par IA, il est essentiel d'examiner les motivations sous-jacentes, les risques potentiels, et comment cette technologie pourrait être intégrée de manière responsable dans la pratique clinique.
+                  </div>
+                </div>
+      
+                <!-- ==================== MOTIVATIONS ==================== -->
+                <div class="essay-para motiv">
+                  <div class="essay-label"><span class="badge move2">MOVE 2</span> MOTIVATIONS — Why AI is Being Explored / Pourquoi l'IA est explorée</div>
+                  
+                  <h4 style="color:var(--accent); margin:12px 0 8px">🇬🇧 English Version</h4>
+                  <div class="essay-text">
+                    <span class="connector">One of the main reasons</span> healthcare systems are exploring AI is the <span class="vocab">limitation of the human eye</span> in detecting subtle tissue changes that may indicate early cancer development. Traditional mammography screening, while effective, cannot identify all cancers: some develop between screenings, known as <span class="highlight">interval cancers</span>, which are often more aggressive and detected at later stages. <span class="connector">Furthermore</span>, AI systems can analyze thousands of images rapidly and identify <span class="vocab">patterns in breast tissue</span> that constitute a biological signature of risk, imperceptible to human observers. <span class="connector">For instance</span>, the Gjesvik study analyzed over 116,000 women from the Norwegian national screening program and demonstrated that women who would later develop cancer already showed higher AI risk scores on their initial "normal" mammograms, with scores progressively increasing until diagnosis, often exceeding 80 just before the cancer was detected. The authors concluded that AI can detect extremely fine patterns in breast texture that signal predisposition to disease. <span class="connector">However</span>, despite these promising findings, significant concerns and limitations have emerged that must be carefully considered.
+                  </div>
+      
+                  <h4 style="color:var(--accent-3); margin:16px 0 8px">🇫🇷 Traduction Française</h4>
+                  <div class="essay-text" style="color:var(--muted); font-style:italic; border-left:3px solid var(--accent-3); padding-left:12px">
+                    <span class="connector">L'une des principales raisons</span> pour lesquelles les systèmes de santé explorent l'IA est la <span class="vocab">limitation de l'œil humain</span> à détecter des changements tissulaires subtils pouvant indiquer un développement précoce du cancer. Le dépistage traditionnel par mammographie, bien qu'efficace, ne peut pas identifier tous les cancers : certains se développent entre les dépistages, appelés <span class="highlight">cancers d'intervalle</span>, qui sont souvent plus agressifs et détectés à des stades plus avancés. <span class="connector">De plus</span>, les systèmes d'IA peuvent analyser des milliers d'images rapidement et identifier des <span class="vocab">motifs dans le tissu mammaire</span> qui constituent une signature biologique du risque, imperceptible aux observateurs humains. <span class="connector">Par exemple</span>, l'étude de Gjesvik a analysé plus de 116 000 femmes du programme national de dépistage norvégien et a démontré que les femmes qui développeraient plus tard un cancer présentaient déjà des scores de risque IA plus élevés sur leurs mammographies "normales" initiales, avec des scores augmentant progressivement jusqu'au diagnostic, dépassant souvent 80 juste avant que le cancer ne soit détecté. Les auteurs ont conclu que l'IA peut détecter des motifs extrêmement fins dans la texture du sein qui signalent une prédisposition à la maladie. <span class="connector">Cependant</span>, malgré ces résultats prometteurs, des préoccupations et limitations significatives ont émergé qui doivent être soigneusement considérées.
+                  </div>
+                </div>
+      
+                <!-- ==================== RISKS ==================== -->
+                <div class="essay-para risk">
+                  <div class="essay-label"><span class="badge move3">MOVE 3</span> RISKS & LIMITATIONS / Risques et Limites</div>
+                  
+                  <h4 style="color:var(--accent); margin:12px 0 8px">🇬🇧 English Version</h4>
+                  <div class="essay-text">
+                    <span class="connector">A key concern</span> highlighted by the study authors themselves is <span class="highlight">population bias</span>: the AI was tested only on a Norwegian population, which is relatively homogeneous. Results cannot be generalized without validation on populations of other ethnic origins or with denser breast tissue. <span class="connector">Additionally</span>, the <span class="vocab">retrospective nature</span> of the study means that the analysis was performed on past images rather than in real-time clinical settings. Prospective studies under real-world conditions are necessary to confirm whether AI scores can genuinely improve early detection and patient outcomes. <span class="connector">Moreover</span>, ethical questions arise regarding patient anxiety: communicating a high-risk AI score to a patient whose mammogram shows no visible abnormalities requires careful consideration of psychological impact. <span class="connector">For example</span>, a woman told she has an elevated risk score despite a "normal" result may experience significant stress and undergo unnecessary additional testing. There is also a risk of <span class="vocab">over-reliance on technology</span>, which could lead healthcare professionals to neglect their own clinical judgment and expertise. <span class="connector">Given these challenges</span>, it is crucial to consider how AI can be integrated responsibly into clinical practice.
+                  </div>
+      
+                  <h4 style="color:var(--accent-3); margin:16px 0 8px">🇫🇷 Traduction Française</h4>
+                  <div class="essay-text" style="color:var(--muted); font-style:italic; border-left:3px solid var(--accent-3); padding-left:12px">
+                    <span class="connector">Une préoccupation majeure</span> soulignée par les auteurs de l'étude eux-mêmes est le <span class="highlight">biais de population</span> : l'IA a été testée uniquement sur une population norvégienne, qui est relativement homogène. Les résultats ne peuvent pas être généralisés sans validation sur des populations d'autres origines ethniques ou avec des tissus mammaires plus denses. <span class="connector">De plus</span>, la <span class="vocab">nature rétrospective</span> de l'étude signifie que l'analyse a été effectuée sur des images passées plutôt que dans des contextes cliniques en temps réel. Des études prospectives en conditions réelles sont nécessaires pour confirmer si les scores IA peuvent véritablement améliorer la détection précoce et les résultats pour les patientes. <span class="connector">En outre</span>, des questions éthiques se posent concernant l'anxiété des patientes : communiquer un score de risque IA élevé à une patiente dont la mammographie ne montre aucune anomalie visible nécessite une considération attentive de l'impact psychologique. <span class="connector">Par exemple</span>, une femme à qui on dit qu'elle a un score de risque élevé malgré un résultat "normal" peut ressentir un stress significatif et subir des tests supplémentaires inutiles. Il existe également un risque de <span class="vocab">sur-dépendance à la technologie</span>, ce qui pourrait amener les professionnels de santé à négliger leur propre jugement clinique et expertise. <span class="connector">Étant donné ces défis</span>, il est crucial de considérer comment l'IA peut être intégrée de manière responsable dans la pratique clinique.
+                  </div>
+                </div>
+      
+                <!-- ==================== SOLUTION ==================== -->
+                <div class="essay-para solution">
+                  <div class="essay-label"><span class="badge move4">MOVE 4</span> SOLUTION — A Balanced Approach / Une Approche Équilibrée</div>
+                  
+                  <h4 style="color:var(--accent); margin:12px 0 8px">🇬🇧 English Version</h4>
+                  <div class="essay-text">
+                    <span class="connector">A safer approach</span> would be to use AI as a <span class="highlight">supportive tool rather than a replacement</span> for human expertise. As the Gjesvik study concludes, AI does not replace the pathologist or radiologist — it provides a score. It is up to the healthcare professional to interpret this score, cross-reference it with other clinical data such as family history and previous screenings, and communicate results in an ethical, human way adapted to each patient. <span class="connector">To address</span> the limitation of population bias, future research should focus on <span class="vocab">validating AI systems</span> across diverse ethnic groups and breast tissue types before widespread clinical implementation. <span class="connector">Furthermore</span>, healthcare providers should receive specialized training on how to communicate AI-generated risk scores to patients in a transparent and supportive manner, minimizing anxiety while empowering informed decision-making. <span class="connector">For instance</span>, established protocols could guide conversations about what a risk score means and what follow-up options are available. Prospective clinical trials are essential to determine whether AI-assisted screening leads to better patient outcomes, including earlier diagnosis, less aggressive treatment, and improved survival rates. <span class="connector">While</span> these solutions offer promise, their effectiveness will depend on long-term commitment from healthcare systems, researchers, and policymakers.
+                  </div>
+      
+                  <h4 style="color:var(--accent-3); margin:16px 0 8px">🇫🇷 Traduction Française</h4>
+                  <div class="essay-text" style="color:var(--muted); font-style:italic; border-left:3px solid var(--accent-3); padding-left:12px">
+                    <span class="connector">Une approche plus sûre</span> serait d'utiliser l'IA comme un <span class="highlight">outil de soutien plutôt qu'un remplacement</span> de l'expertise humaine. Comme le conclut l'étude de Gjesvik, l'IA ne remplace pas le pathologiste ou le radiologue — elle fournit un score. C'est au professionnel de santé d'interpréter ce score, de le croiser avec d'autres données cliniques telles que les antécédents familiaux et les dépistages précédents, et de communiquer les résultats de manière éthique et humaine, adaptée à chaque patiente. <span class="connector">Pour résoudre</span> la limitation du biais de population, les recherches futures devraient se concentrer sur la <span class="vocab">validation des systèmes d'IA</span> à travers divers groupes ethniques et types de tissus mammaires avant une mise en œuvre clinique généralisée. <span class="connector">De plus</span>, les prestataires de soins devraient recevoir une formation spécialisée sur la façon de communiquer les scores de risque générés par l'IA aux patientes de manière transparente et bienveillante, minimisant l'anxiété tout en favorisant une prise de décision éclairée. <span class="connector">Par exemple</span>, des protocoles établis pourraient guider les conversations sur ce que signifie un score de risque et quelles options de suivi sont disponibles. Des essais cliniques prospectifs sont essentiels pour déterminer si le dépistage assisté par IA conduit à de meilleurs résultats pour les patientes, y compris un diagnostic plus précoce, un traitement moins agressif et des taux de survie améliorés. <span class="connector">Bien que</span> ces solutions soient prometteuses, leur efficacité dépendra d'un engagement à long terme des systèmes de santé, des chercheurs et des décideurs politiques.
+                  </div>
+                </div>
+      
+                <!-- ==================== CONCLUSION ==================== -->
+                <div class="essay-para conclusion">
+                  <div class="essay-label"><span class="badge move5">MOVE 5</span> CONCLUSION — Forward Look / Regard vers l'avenir</div>
+                  
+                  <h4 style="color:var(--accent); margin:12px 0 8px">🇬🇧 English Version</h4>
+                  <div class="essay-text">
+                    <span class="connector">In the future</span>, AI is likely to play an increasingly important role in <span class="vocab">personalized medicine</span>, enabling healthcare providers to stratify patients according to their individual risk profiles and tailor screening intervals accordingly. The Gjesvik study lays the foundation for this approach by demonstrating that image-based AI analysis can match or exceed the performance of traditional clinical prediction models. <span class="connector">Overall</span>, while AI offers <span class="highlight">significant opportunities</span> to improve breast cancer detection, it also requires careful implementation to ensure that technology enhances rather than replaces human judgment. The healthcare professional must remain at the center of patient care, using AI as one tool among many in the diagnostic process. <span class="connector">Ultimately</span>, the future of AI in breast cancer diagnosis depends not on choosing between human expertise and artificial intelligence, but on <span class="highlight">finding the optimal collaboration between the two</span>. By adopting this balanced approach, healthcare systems can harness the power of technology while preserving the irreplaceable human elements of empathy, communication, and clinical wisdom.
+                  </div>
+      
+                  <h4 style="color:var(--accent-3); margin:16px 0 8px">🇫🇷 Traduction Française</h4>
+                  <div class="essay-text" style="color:var(--muted); font-style:italic; border-left:3px solid var(--accent-3); padding-left:12px">
+                    <span class="connector">À l'avenir</span>, l'IA jouera probablement un rôle de plus en plus important dans la <span class="vocab">médecine personnalisée</span>, permettant aux prestataires de soins de stratifier les patientes selon leurs profils de risque individuels et d'adapter les intervalles de dépistage en conséquence. L'étude de Gjesvik pose les bases de cette approche en démontrant que l'analyse d'IA basée sur l'image peut égaler ou dépasser les performances des modèles de prédiction clinique traditionnels. <span class="connector">Dans l'ensemble</span>, bien que l'IA offre des <span class="highlight">opportunités significatives</span> pour améliorer la détection du cancer du sein, elle nécessite également une mise en œuvre prudente pour garantir que la technologie améliore plutôt qu'elle ne remplace le jugement humain. Le professionnel de santé doit rester au centre des soins aux patientes, utilisant l'IA comme un outil parmi d'autres dans le processus diagnostique. <span class="connector">En fin de compte</span>, l'avenir de l'IA dans le diagnostic du cancer du sein ne dépend pas du choix entre l'expertise humaine et l'intelligence artificielle, mais de la <span class="highlight">recherche de la collaboration optimale entre les deux</span>. En adoptant cette approche équilibrée, les systèmes de santé peuvent exploiter la puissance de la technologie tout en préservant les éléments humains irremplaçables que sont l'empathie, la communication et la sagesse clinique.
+                  </div>
+                </div>
+      
+              </div>
+      
+              <!-- ANALYSE DE L'ESSAY -->
+              <div class="callout green">
+                <div class="callout-title">✅ Analyse de l'essay modèle / Analysis of the model essay</div>
+                <table>
+                  <tr>
+                    <th>Critère / Criterion</th>
+                    <th>English</th>
+                    <th>Français</th>
+                  </tr>
+                  <tr>
+                    <td><strong>Structure</strong></td>
+                    <td>5 Moves clearly identifiable</td>
+                    <td>5 Moves clairement identifiables</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Paragraphs</strong></td>
+                    <td>Each follows TS-SS-EX-L</td>
+                    <td>Chacun suit TS-SS-EX-L</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Neutrality</strong></td>
+                    <td>No "I think" or personal opinion</td>
+                    <td>Aucun "I think" ou opinion personnelle</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Examples</strong></td>
+                    <td>Constant reference to Gjesvik study</td>
+                    <td>Référence constante à l'étude Gjesvik</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Connectors</strong></td>
+                    <td>Varied and well-placed (highlighted in pink)</td>
+                    <td>Variés et bien placés (surlignés en rose)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Vocabulary</strong></td>
+                    <td>Academic and specific (highlighted in green)</td>
+                    <td>Académique et spécifique (surligné en vert)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Conclusion</strong></td>
+                    <td>Future vision + strong final sentence</td>
+                    <td>Vision future + phrase finale forte</td>
+                  </tr>
+                </table>
+              </div>
+      
+              <!-- PHRASES CLÉS À RETENIR -->
+              <div class="callout pink">
+                <div class="callout-title">🔑 Phrases clés à retenir / Key sentences to remember</div>
+                
+                <h4>📍 Phrase d'introduction type / Typical introduction sentence:</h4>
+                <div class="bilingual" style="margin:10px 0">
+                  <p class="en">"[Topic] refers to [definition]. In recent years, there has been increasing attention to [context]."</p>
+                  <p class="fr">→ "[Sujet] fait référence à [définition]. Ces dernières années, une attention croissante a été portée à [contexte]."</p>
+                </div>
+      
+                <h4>📍 Phrase de motivation type / Typical motivation sentence:</h4>
+                <div class="bilingual" style="margin:10px 0">
+                  <p class="en">"One of the main reasons [actors] are exploring [topic] is [reason]."</p>
+                  <p class="fr">→ "L'une des principales raisons pour lesquelles [acteurs] explorent [sujet] est [raison]."</p>
+                </div>
+      
+                <h4>📍 Phrase de risque type / Typical risk sentence:</h4>
+                <div class="bilingual" style="margin:10px 0">
+                  <p class="en">"A key concern is [problem]: [explanation]. Results cannot be generalized without [condition]."</p>
+                  <p class="fr">→ "Une préoccupation majeure est [problème] : [explication]. Les résultats ne peuvent pas être généralisés sans [condition]."</p>
+                </div>
+      
+                <h4>📍 Phrase de solution type / Typical solution sentence:</h4>
+                <div class="bilingual" style="margin:10px 0">
+                  <p class="en">"A safer approach would be to use [tool] as a supportive tool rather than a replacement for [human element]."</p>
+                  <p class="fr">→ "Une approche plus sûre serait d'utiliser [outil] comme un outil de soutien plutôt qu'un remplacement de [élément humain]."</p>
+                </div>
+      
+                <h4>📍 Phrase de conclusion type / Typical conclusion sentence:</h4>
+                <div class="bilingual" style="margin:10px 0">
+                  <p class="en">"Ultimately, the future of [topic] depends not on choosing between [A] and [B], but on finding the optimal collaboration between the two."</p>
+                  <p class="fr">→ "En fin de compte, l'avenir de [sujet] ne dépend pas du choix entre [A] et [B], mais de la recherche de la collaboration optimale entre les deux."</p>
+                </div>
+              </div>
+      
+              <!-- MESSAGE CLÉ -->
+              <div class="mnemo">
+                <div class="mnemo-title">🎯 LE MESSAGE CLÉ DE TON EXPOSÉ / THE KEY MESSAGE</div>
+                <div class="bilingual">
+                  <p class="en" style="font-size:16px; font-weight:700">"AI does not replace the pathologist or radiologist — it provides a score. It is up to the healthcare professional to interpret it, cross-reference it with other data, and communicate results in an ethical, human way adapted to each patient."</p>
+                  <p class="fr" style="font-size:15px">"L'IA ne remplace pas le pathologiste ou le radiologue — elle fournit un score. C'est au professionnel de santé de l'interpréter, de le croiser avec d'autres données, et de communiquer les résultats de manière éthique et humaine, adaptée à chaque patiente."</p>
+                </div>
+                <p style="margin-top:12px; color:var(--warn)">💡 Ce message doit transparaître dans TOUT essay sur ce sujet !</p>
+              </div>
+      
+              <!-- WORD COUNT -->
+              <div class="callout">
+                <div class="callout-title">📊 Statistiques de l'essay / Essay statistics</div>
+                <ul>
+                  <li><strong>Word count (English):</strong> ~650 words</li>
+                  <li><strong>Paragraphs:</strong> 5 (1 intro + 3 body + 1 conclusion)</li>
+                  <li><strong>Connectors used:</strong> 15+ (varied)</li>
+                  <li><strong>References to study:</strong> 5+ mentions of Gjesvik</li>
+                  <li><strong>Key vocabulary:</strong> 20+ academic terms</li>
+                </ul>
+              </div>
+      
+            </section>
+
+      <!-- ========== SECTION 7: CHECKLIST ========== -->
+      <section class="card" id="checklist">
+        <button class="copy-btn" onclick="copySection('checklist')">📋 Copier</button>
+        <h2><span class="section-number">7</span> ✅ Checklist Finale — Avant de Rendre</h2>
+        
+        <ul class="checklist">
+          <li><span class="check-icon">☐</span> <strong>Move 1 (Intro) :</strong> Définition + contexte + mention de l'étude Gjesvik + transition</li>
+          <li><span class="check-icon">☐</span> <strong>Move 2 (Motivations) :</strong> Pourquoi l'IA est explorée + capacités + résultats de l'étude</li>
+          <li><span class="check-icon">☐</span> <strong>Move 3 (Risques) :</strong> Biais de population + nature rétrospective + éthique + exemples</li>
+          <li><span class="check-icon">☐</span> <strong>Move 4 (Solution) :</strong> IA comme outil + validation + formation + études prospectives</li>
+          <li><span class="check-icon">☐</span> <strong>Move 5 (Conclusion) :</strong> Vision future + équilibre + phrase finale forte</li>
+          <li><span class="check-icon">☐</span> <strong>Structure TS-SS-EX-L</strong> respectée dans chaque paragraphe ?</li>
+          <li><span class="check-icon">☐</span> <strong>Aucun "I think"</strong> ou opinion personnelle ?</li>
+          <li><span class="check-icon">☐</span> <strong>Aucune contraction</strong> (don't → do not) ?</li>
+          <li><span class="check-icon">☐</span> <strong>Exemples concrets</strong> dans chaque paragraphe du body ?</li>
+          <li><span class="check-icon">☐</span> <strong>Transitions</strong> (Linking Sentences) entre chaque Move ?</li>
+          <li><span class="check-icon">☐</span> <strong>Connecteurs variés</strong> (pas toujours "However") ?</li>
+          <li><span class="check-icon">☐</span> <strong>Vocabulaire académique</strong> et spécifique au sujet ?</li>
+          <li><span class="check-icon">☐</span> <strong>Référence à l'étude</strong> Gjesvik mentionnée ?</li>
+          <li><span class="check-icon">☐</span> <strong>Solution réaliste</strong> (pas "ban AI" ou "replace all doctors") ?</li>
+          <li><span class="check-icon">☐</span> <strong>Conclusion</strong> projette vers le futur ?</li>
+        </ul>
+
+        <div class="mnemo">
+          <div class="mnemo-title">🎯 Rappel : Le message clé de ton exposé</div>
+          <div class="bilingual">
+            <p class="en"><strong>"AI does not replace the pathologist or radiologist — it provides a score. It is up to the healthcare professional to interpret it."</strong></p>
+            <p class="fr">→ "L'IA ne remplace pas le pathologiste ou le radiologue — elle fournit un score. C'est au professionnel de santé de l'interpréter."</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script>
+/* =============================
+   UTILITIES
+   ============================= */
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+
+// Theme toggle
+$('#toggleTheme')?.addEventListener('click', () => {
+  const theme = document.body.getAttribute('data-theme');
+  document.body.setAttribute('data-theme', theme === 'light' ? 'dark' : 'light');
+});
+
+// Print
+$('#btnPrint')?.addEventListener('click', () => window.print());
+
+// Scroll to flashcards
+$('#btnScrollFC')?.addEventListener('click', () => {
+  $('#flashcards')?.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Copy section
+function copySection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.innerText).then(() => {
+    alert('Section copiée !');
+  });
+}
+
+/* =============================
+   FLASHCARDS DATA
+   ============================= */
+   const CARDS = [
+  // ==========================================
+  // ÉTUDE GJESVIK - INFORMATIONS CLÉS
+  // ==========================================
+  {
+    q: "What is the title of the Gjesvik study? / Quel est le titre de l'étude Gjesvik ?",
+    a: `📄 TITLE / TITRE :
+
+🇬🇧 "Association of Artificial Intelligence Risk Scores With Future Breast Cancer Among Women With No Radiologic Evidence of Malignancy at Screening Mammography"
+
+🇫🇷 "Association des scores de risque d'intelligence artificielle avec le cancer du sein futur chez les femmes sans preuve radiologique de malignité lors de la mammographie de dépistage"
+
+📍 Published in / Publié dans : JAMA Network Open, 2024
+👨‍🔬 Authors / Auteurs : Jonas Gjesvik et al. (Norwegian researchers / chercheurs norvégiens)`
+  },
+  {
+    q: "What is the central scientific question of the Gjesvik study? / Quelle est la question scientifique centrale de l'étude ?",
+    a: `🔬 CENTRAL QUESTION / QUESTION CENTRALE :
+
+🇬🇧 Can AI software, applied to a "normal" mammogram, detect invisible clues that signal future cancer risk?
+
+🇫🇷 Un logiciel d'IA, appliqué à une mammographie "normale", peut-il détecter des indices invisibles qui signalent un risque futur de cancer ?
+
+💡 KEY IDEA / IDÉE CLÉ :
+🇬🇧 AI detecting a PREDISPOSITION to develop cancer, not just an existing tumor
+🇫🇷 L'IA détecte une PRÉDISPOSITION à développer un cancer, pas seulement une tumeur existante`
+  },
+  {
+    q: "What is an 'interval cancer'? / Qu'est-ce qu'un 'cancer d'intervalle' ?",
+    a: `🏥 INTERVAL CANCER / CANCER D'INTERVALLE :
+
+🇬🇧 DEFINITION:
+A cancer that develops between two screenings and escapes conventional detection.
+
+🇫🇷 DÉFINITION :
+Un cancer qui se développe entre deux dépistages et échappe à la détection classique.
+
+⚠️ CHARACTERISTICS / CARACTÉRISTIQUES :
+🇬🇧 Often more AGGRESSIVE, harder to TREAT, detected LATE
+🇫🇷 Souvent plus AGRESSIFS, plus difficiles à TRAITER, détectés TARDIVEMENT`
+  },
+  {
+    q: "What methodology was used in the Gjesvik study? / Quelle méthodologie a été utilisée ?",
+    a: `📊 METHODOLOGY / MÉTHODOLOGIE :
+
+🇬🇧 ENGLISH:
+• Type: Retrospective study
+• Sample: 116,000+ women
+• Period: 2004-2018
+• Source: Norwegian national screening program
+• AI Software: Lunit INSIGHT MMG
+• Score: 0 to 100 (pixel analysis only)
+
+🇫🇷 FRANÇAIS :
+• Type : Étude rétrospective
+• Échantillon : Plus de 116 000 femmes
+• Période : 2004-2018
+• Source : Programme national norvégien de dépistage
+• Logiciel IA : Lunit INSIGHT MMG
+• Score : 0 à 100 (analyse des pixels uniquement)
+
+💡 The AI does NOT use medical history, age, or family history
+💡 L'IA n'utilise PAS les antécédents médicaux, l'âge ou l'historique familial`
+  },
+  {
+    q: "What are the major findings of the Gjesvik study? / Quels sont les résultats majeurs ?",
+    a: `📈 MAJOR FINDINGS / RÉSULTATS MAJEURS :
+
+🇬🇧 ENGLISH:
+1. Women who later developed cancer already had HIGHER AI scores on their first "normal" mammograms
+2. Scores increased PROGRESSIVELY until diagnosis
+3. Scores exceeded 80 just BEFORE diagnosis
+
+🇫🇷 FRANÇAIS :
+1. Les femmes qui ont développé un cancer plus tard avaient DÉJÀ des scores plus élevés sur leurs premières mammographies "normales"
+2. Les scores augmentaient PROGRESSIVEMENT jusqu'au diagnostic
+3. Les scores dépassaient 80 juste AVANT le diagnostic
+
+💡 INTERPRETATION / INTERPRÉTATION :
+🇬🇧 AI detects extremely fine patterns = a "biological signature of risk" imperceptible to the human eye
+🇫🇷 L'IA détecte des motifs extrêmement fins = une "signature biologique du risque" imperceptible à l'œil humain`
+  },
+  {
+    q: "What are the 2 major limitations of the Gjesvik study? / Quelles sont les 2 limites majeures ?",
+    a: `⚠️ LIMITATION 1: POPULATION BIAS / BIAIS DE POPULATION
+
+🇬🇧 The AI was tested only on a Norwegian population, which is relatively homogeneous. Results cannot be generalized without validation on populations of other ethnic origins or with denser breasts.
+
+🇫🇷 L'IA a été testée uniquement sur une population norvégienne, relativement homogène. Les résultats ne peuvent pas être généralisés sans validation sur des populations d'autres origines ethniques ou ayant des seins plus denses.
+
+⚠️ LIMITATION 2: RETROSPECTIVE NATURE / NATURE RÉTROSPECTIVE
+
+🇬🇧 The analysis was done on past images. Prospective studies under real-world conditions are needed.
+
+🇫🇷 L'analyse a été faite sur des images du passé. Des études prospectives en conditions réelles sont nécessaires.`
+  },
+  {
+    q: "What is the main conclusion of the Gjesvik study? / Quelle est la conclusion principale ?",
+    a: `🎯 MAIN CONCLUSION / CONCLUSION PRINCIPALE :
+
+🇬🇧 ENGLISH:
+"AI does not replace the pathologist or radiologist — it provides a score. It is up to the healthcare professional to interpret it, cross-reference it with other data, and communicate results in an ethical, human way adapted to each patient."
+
+🇫🇷 FRANÇAIS :
+"L'IA ne remplace pas le pathologiste ou le radiologue — elle fournit un score. C'est au professionnel de santé de l'interpréter, de le croiser avec d'autres données, et de communiquer les résultats de manière éthique et humaine, adaptée à chaque patiente."
+
+💡 THIS IS THE KEY MESSAGE OF YOUR PRESENTATION!
+💡 C'EST LE MESSAGE CLÉ DE TON EXPOSÉ !`
+  },
+
+  // ==========================================
+  // VOCABULAIRE MÉDICAL BILINGUE
+  // ==========================================
+  {
+    q: "How do you say 'mammographie' and 'dépistage' in English?",
+    a: `🏥 MEDICAL VOCABULARY / VOCABULAIRE MÉDICAL :
+
+MAMMOGRAPHY = Mammographie
+🇬🇧 X-ray imaging of the breast for screening
+🇫🇷 Imagerie par rayons X du sein pour le dépistage
+
+SCREENING = Dépistage
+🇬🇧 Regular examination to detect disease early
+🇫🇷 Examen régulier pour détecter une maladie précocement
+
+BREAST CANCER = Cancer du sein
+🇬🇧 Malignant tumor in breast tissue
+🇫🇷 Tumeur maligne dans le tissu mammaire
+
+DIAGNOSIS = Diagnostic
+🇬🇧 Identification of a disease
+🇫🇷 Identification d'une maladie`
+  },
+  {
+    q: "What is the difference between 'pathologist' and 'radiologist'?",
+    a: `👨‍⚕️ PATHOLOGIST vs RADIOLOGIST :
+
+PATHOLOGIST = Pathologiste
+🇬🇧 Doctor who examines TISSUE SAMPLES under a microscope
+🇫🇷 Médecin qui examine des ÉCHANTILLONS DE TISSUS au microscope
+
+RADIOLOGIST = Radiologue
+🇬🇧 Doctor specialized in MEDICAL IMAGING (mammograms, CT scans, MRI)
+🇫🇷 Médecin spécialisé en IMAGERIE MÉDICALE (mammographies, scanners, IRM)
+
+💡 In the Gjesvik study, AI helps RADIOLOGISTS interpret mammograms
+💡 Dans l'étude Gjesvik, l'IA aide les RADIOLOGUES à interpréter les mammographies`
+  },
+  {
+    q: "How do you say 'score de risque' and 'motif/pattern' in English?",
+    a: `🤖 AI & TECHNOLOGY VOCABULARY :
+
+RISK SCORE = Score de risque
+🇬🇧 Numerical value indicating probability of disease
+🇫🇷 Valeur numérique indiquant la probabilité de maladie
+
+PATTERN = Motif
+🇬🇧 Recurring characteristic in data/images
+🇫🇷 Caractéristique récurrente dans les données/images
+
+PATTERN RECOGNITION = Reconnaissance de motifs
+🇬🇧 AI ability to identify patterns in data
+🇫🇷 Capacité de l'IA à identifier des motifs dans les données
+
+PIXEL ANALYSIS = Analyse de pixels
+🇬🇧 Examination of individual image elements
+🇫🇷 Examen des éléments individuels d'une image`
+  },
+  {
+    q: "What is the difference between 'retrospective study' and 'prospective study'?",
+    a: `🔬 RESEARCH VOCABULARY :
+
+RETROSPECTIVE STUDY = Étude rétrospective
+🇬🇧 Analysis of PAST data (looking backward)
+🇫🇷 Analyse de données du PASSÉ (regard en arrière)
+→ Like the Gjesvik study (images from 2004-2018)
+
+PROSPECTIVE STUDY = Étude prospective
+🇬🇧 Study following subjects OVER TIME (looking forward)
+🇫🇷 Étude suivant des sujets DANS LE TEMPS (regard vers l'avenir)
+→ Needed to validate AI in real conditions
+
+⚠️ The Gjesvik study is RETROSPECTIVE = a limitation!
+⚠️ L'étude Gjesvik est RÉTROSPECTIVE = une limite !`
+  },
+  {
+    q: "How do you say 'biais de population' and 'validation' in English?",
+    a: `📊 RESEARCH VOCABULARY :
+
+POPULATION BIAS = Biais de population
+🇬🇧 Skewed results due to sample characteristics
+🇫🇷 Résultats faussés dus aux caractéristiques de l'échantillon
+
+VALIDATION = Validation
+🇬🇧 Confirmation that results are reliable
+🇫🇷 Confirmation que les résultats sont fiables
+
+SAMPLE = Échantillon
+🇬🇧 Subset of population studied
+🇫🇷 Sous-ensemble de la population étudiée
+
+FINDINGS = Résultats / Découvertes
+🇬🇧 Discoveries from research
+🇫🇷 Découvertes issues de la recherche`
+  },
+
+  // ==========================================
+  // MÉTHODE ESSAY - 5 MOVES
+  // ==========================================
+  {
+    q: "What are the 5 MOVES of an academic essay? / Quels sont les 5 MOVES ?",
+    a: `📐 THE 5 MOVES / LES 5 MOVES :
+
+1️⃣ MOVE 1 — Introduce the Phenomenon
+   🇬🇧 Define + Context + Stay NEUTRAL
+   🇫🇷 Définir + Contexte + Rester NEUTRE
+
+2️⃣ MOVE 2 — Present Motivations
+   🇬🇧 Explain WHY it exists / is used
+   🇫🇷 Expliquer POURQUOI ça existe / on l'utilise
+
+3️⃣ MOVE 3 — State Risks / Problems
+   🇬🇧 Dangers + Limitations + Examples
+   🇫🇷 Dangers + Limites + Exemples
+
+4️⃣ MOVE 4 — Provide Solution
+   🇬🇧 REALISTIC and balanced approach
+   🇫🇷 Approche RÉALISTE et équilibrée
+
+5️⃣ MOVE 5 — Forward Look
+   🇬🇧 FUTURE vision + Strong final sentence
+   🇫🇷 Vision FUTURE + Phrase finale forte
+
+🧠 MNEMONIC: "IMRSF" = I Must Really Study First`
+  },
+  {
+    q: "What does TS-SS-EX-L mean? / Que signifie TS-SS-EX-L ?",
+    a: `📐 PARAGRAPH STRUCTURE / STRUCTURE DE PARAGRAPHE :
+
+TS = Topic Sentence
+🇬🇧 Opening sentence = MAIN idea (ONE idea only!)
+🇫🇷 Phrase d'ouverture = idée PRINCIPALE (UNE seule idée !)
+
+SS = Supporting Sentences
+🇬🇧 2-3 sentences that EXPLAIN and DEVELOP
+🇫🇷 2-3 phrases qui EXPLIQUENT et DÉVELOPPENT
+
+EX = Example
+🇬🇧 CONCRETE illustration (study, statistics, case)
+🇫🇷 Illustration CONCRÈTE (étude, statistiques, cas)
+
+L = Linking Sentence
+🇬🇧 TRANSITION to next paragraph
+🇫🇷 TRANSITION vers le paragraphe suivant
+
+🧠 MNEMONIC: "The Student Explains, then Links"`
+  },
+  {
+    q: "What are the 3 golden rules of an academic essay? / Quelles sont les 3 règles d'or ?",
+    a: `🏆 3 GOLDEN RULES / 3 RÈGLES D'OR :
+
+1️⃣ ABSOLUTE NEUTRALITY / NEUTRALITÉ ABSOLUE
+🇬🇧 NEVER use "I think", "I believe", "In my opinion"
+🇫🇷 JAMAIS "I think", "I believe", "In my opinion"
+
+2️⃣ ACADEMIC LANGUAGE / LANGAGE ACADÉMIQUE
+🇬🇧 No contractions:
+   don't → do not
+   can't → cannot
+   won't → will not
+🇫🇷 Pas de contractions
+
+3️⃣ CLEAR STRUCTURE / STRUCTURE CLAIRE
+🇬🇧 Each paragraph = TS + SS + EX + L
+🇫🇷 Chaque paragraphe = TS + SS + EX + L`
+  },
+  {
+    q: "What expressions are FORBIDDEN in an academic essay? / Quelles expressions sont INTERDITES ?",
+    a: `❌ FORBIDDEN EXPRESSIONS / EXPRESSIONS INTERDITES :
+
+PERSONAL OPINIONS / OPINIONS PERSONNELLES :
+• I think → ❌
+• I believe → ❌
+• In my opinion → ❌
+• Maybe → ❌
+
+✅ USE INSTEAD / UTILISER À LA PLACE :
+• Research suggests that...
+• Studies indicate that...
+• Evidence shows that...
+• It can be argued that...
+
+VAGUE LANGUAGE / LANGAGE VAGUE :
+• It is good → ❌ (use: beneficial, advantageous)
+• It is bad → ❌ (use: detrimental, harmful)
+• Things, stuff → ❌ (use: factors, aspects, elements)
+
+INFORMAL / INFORMEL :
+• A lot of → ❌ (use: many, numerous)
+• Kids → ❌ (use: children)`
+  },
+
+  // ==========================================
+  // MOVE 1 - INTRODUCTION PHRASES
+  // ==========================================
+  {
+    q: "MOVE 1: How to DEFINE AI in medical diagnosis? / Comment DÉFINIR l'IA dans le diagnostic médical ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"Artificial intelligence in medical diagnosis refers to the use of computer algorithms to analyze medical images and detect patterns that may indicate disease."
+
+🇫🇷 FRANÇAIS :
+"L'intelligence artificielle dans le diagnostic médical fait référence à l'utilisation d'algorithmes informatiques pour analyser des images médicales et détecter des motifs pouvant indiquer une maladie."
+
+💡 KEY STRUCTURES / STRUCTURES CLÉS :
+• "[Topic] refers to..." = [Sujet] fait référence à...
+• "[Topic] is defined as..." = [Sujet] est défini comme...
+• "[Topic] can be understood as..." = [Sujet] peut être compris comme...`
+  },
+  {
+    q: "MOVE 1: How to introduce CONTEXT about AI and breast cancer? / Comment introduire le CONTEXTE ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"In recent years, there has been increasing attention to the potential of AI to improve breast cancer screening, particularly in detecting cancers that are missed by traditional methods."
+
+🇫🇷 FRANÇAIS :
+"Ces dernières années, une attention croissante a été portée au potentiel de l'IA pour améliorer le dépistage du cancer du sein, en particulier pour détecter les cancers manqués par les méthodes traditionnelles."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"In recent years, there has been increasing attention to..."
+= "Ces dernières années, une attention croissante a été portée à..."`
+  },
+  {
+    q: "MOVE 1: How to mention the Gjesvik study? / Comment mentionner l'étude Gjesvik ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"A recent study by Gjesvik et al., published in JAMA Network Open in 2024, examined whether AI could predict future breast cancer risk from mammograms that appeared normal to radiologists."
+
+🇫🇷 FRANÇAIS :
+"Une étude récente de Gjesvik et al., publiée dans JAMA Network Open en 2024, a examiné si l'IA pouvait prédire le risque futur de cancer du sein à partir de mammographies qui semblaient normales aux radiologues."
+
+💡 Always cite: AUTHOR + JOURNAL + YEAR
+💡 Toujours citer : AUTEUR + JOURNAL + ANNÉE`
+  },
+  {
+    q: "MOVE 1: How to make the TRANSITION to Move 2? / Comment faire la TRANSITION vers Move 2 ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"To understand the growing interest in AI-assisted diagnosis, it is essential to examine the underlying motivations and current limitations of traditional screening methods."
+
+🇫🇷 FRANÇAIS :
+"Pour comprendre l'intérêt croissant pour le diagnostic assisté par IA, il est essentiel d'examiner les motivations sous-jacentes et les limites actuelles des méthodes de dépistage traditionnelles."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"To understand [topic], it is essential to examine..."
+= "Pour comprendre [sujet], il est essentiel d'examiner..."`
+  },
+
+  // ==========================================
+  // MOVE 2 - MOTIVATION PHRASES
+  // ==========================================
+  {
+    q: "MOVE 2: How to explain WHY AI is being explored? / Comment expliquer POURQUOI l'IA est explorée ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"One of the main reasons healthcare systems are exploring AI is the limitation of the human eye in detecting subtle tissue changes that may indicate early cancer development."
+
+🇫🇷 FRANÇAIS :
+"L'une des principales raisons pour lesquelles les systèmes de santé explorent l'IA est la limitation de l'œil humain à détecter des changements tissulaires subtils pouvant indiquer un développement précoce du cancer."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"One of the main reasons [actors] are exploring [topic] is..."
+= "L'une des principales raisons pour lesquelles [acteurs] explorent [sujet] est..."`
+  },
+  {
+    q: "MOVE 2: How to talk about interval cancers? / Comment parler des cancers d'intervalle ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"Furthermore, interval cancers — cancers that develop between screening appointments — represent a significant challenge, as they are often more aggressive and detected at later stages."
+
+🇫🇷 FRANÇAIS :
+"De plus, les cancers d'intervalle — cancers qui se développent entre les rendez-vous de dépistage — représentent un défi important, car ils sont souvent plus agressifs et détectés à des stades plus avancés."
+
+💡 Use dashes to define a technical term
+💡 Utilise les tirets pour définir un terme technique`
+  },
+  {
+    q: "MOVE 2: How to present the RESULTS of the study? / Comment présenter les RÉSULTATS de l'étude ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"The Gjesvik study demonstrated that women who would later develop cancer already showed higher AI risk scores on their initial 'normal' mammograms, with scores progressively increasing until diagnosis, often exceeding 80 just before detection."
+
+🇫🇷 FRANÇAIS :
+"L'étude de Gjesvik a démontré que les femmes qui développeraient plus tard un cancer présentaient déjà des scores de risque IA plus élevés sur leurs mammographies 'normales' initiales, avec des scores augmentant progressivement jusqu'au diagnostic, dépassant souvent 80 juste avant la détection."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"The study demonstrated that..."
+= "L'étude a démontré que..."`
+  },
+  {
+    q: "MOVE 2: How to make the TRANSITION to Move 3? / Comment faire la TRANSITION vers Move 3 ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"However, despite these promising findings, significant concerns and limitations have emerged that must be carefully considered."
+
+🇫🇷 FRANÇAIS :
+"Cependant, malgré ces résultats prometteurs, des préoccupations et limitations significatives ont émergé qui doivent être soigneusement considérées."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"However, despite these [positive elements], [negative elements] have emerged..."
+= "Cependant, malgré ces [éléments positifs], [éléments négatifs] ont émergé..."`
+  },
+
+  // ==========================================
+  // MOVE 3 - RISK PHRASES
+  // ==========================================
+  {
+    q: "MOVE 3: How to present POPULATION BIAS? / Comment présenter le BIAIS DE POPULATION ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"A key concern is population bias: the AI in the Gjesvik study was tested only on a Norwegian population, which is relatively homogeneous. Results cannot be generalized without validation on more diverse populations."
+
+🇫🇷 FRANÇAIS :
+"Une préoccupation majeure est le biais de population : l'IA dans l'étude de Gjesvik a été testée uniquement sur une population norvégienne, relativement homogène. Les résultats ne peuvent pas être généralisés sans validation sur des populations plus diverses."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"A key concern is..."
+= "Une préoccupation majeure est..."`
+  },
+  {
+    q: "MOVE 3: How to present the RETROSPECTIVE NATURE? / Comment présenter la NATURE RÉTROSPECTIVE ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"Additionally, the retrospective nature of the study means that the analysis was performed on past images. Prospective studies under real-world conditions are necessary to confirm whether AI scores can genuinely improve early detection."
+
+🇫🇷 FRANÇAIS :
+"De plus, la nature rétrospective de l'étude signifie que l'analyse a été effectuée sur des images passées. Des études prospectives en conditions réelles sont nécessaires pour confirmer si les scores IA peuvent véritablement améliorer la détection précoce."
+
+💡 KEY CONNECTOR / CONNECTEUR CLÉ :
+"Additionally..." = "De plus..."`
+  },
+  {
+    q: "MOVE 3: How to talk about ETHICAL CONCERNS? / Comment parler des PRÉOCCUPATIONS ÉTHIQUES ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"Furthermore, ethical questions arise regarding patient anxiety: how should healthcare providers communicate a high-risk AI score to a patient whose mammogram shows no visible abnormalities?"
+
+🇫🇷 FRANÇAIS :
+"En outre, des questions éthiques se posent concernant l'anxiété des patientes : comment les prestataires de soins devraient-ils communiquer un score de risque IA élevé à une patiente dont la mammographie ne montre aucune anomalie visible ?"
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"Ethical questions arise regarding..."
+= "Des questions éthiques se posent concernant..."`
+  },
+  {
+    q: "MOVE 3: How to talk about OVER-RELIANCE on technology? / Comment parler de la SUR-DÉPENDANCE à la technologie ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"There is also a risk of over-reliance on technology, which could lead healthcare professionals to neglect their own clinical judgment and expertise."
+
+🇫🇷 FRANÇAIS :
+"Il existe également un risque de sur-dépendance à la technologie, ce qui pourrait amener les professionnels de santé à négliger leur propre jugement clinique et expertise."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"There is also a risk of..."
+= "Il existe également un risque de..."`
+  },
+  {
+    q: "MOVE 3: How to make the TRANSITION to Move 4? / Comment faire la TRANSITION vers Move 4 ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"Given these challenges, it is crucial to consider how AI can be integrated responsibly into clinical practice."
+
+🇫🇷 FRANÇAIS :
+"Étant donné ces défis, il est crucial de considérer comment l'IA peut être intégrée de manière responsable dans la pratique clinique."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"Given these challenges, it is crucial to..."
+= "Étant donné ces défis, il est crucial de..."`
+  },
+
+  // ==========================================
+  // MOVE 4 - SOLUTION PHRASES
+  // ==========================================
+  {
+    q: "MOVE 4: How to present AI as a TOOL (not replacement)? / Comment présenter l'IA comme OUTIL ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"A safer approach would be to use AI as a supportive tool rather than a replacement for human expertise. AI provides a score; it is up to the healthcare professional to interpret it and combine it with other clinical data."
+
+🇫🇷 FRANÇAIS :
+"Une approche plus sûre serait d'utiliser l'IA comme un outil de soutien plutôt qu'un remplacement de l'expertise humaine. L'IA fournit un score ; c'est au professionnel de santé de l'interpréter et de le combiner avec d'autres données cliniques."
+
+💡 THIS IS THE KEY MESSAGE!
+💡 C'EST LE MESSAGE CLÉ !`
+  },
+  {
+    q: "MOVE 4: How to propose VALIDATION on diverse populations? / Comment proposer une VALIDATION plus large ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"To address the limitation of population bias, future research should focus on validating AI systems across diverse ethnic groups and breast tissue types before widespread clinical implementation."
+
+🇫🇷 FRANÇAIS :
+"Pour résoudre la limitation du biais de population, les recherches futures devraient se concentrer sur la validation des systèmes d'IA à travers divers groupes ethniques et types de tissus mammaires avant une mise en œuvre clinique généralisée."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"To address the limitation of [problem], [solution]..."
+= "Pour résoudre la limitation de [problème], [solution]..."`
+  },
+  {
+    q: "MOVE 4: How to talk about TRAINING healthcare providers? / Comment parler de la FORMATION des professionnels ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"Healthcare providers should receive specialized training on how to communicate AI-generated risk scores to patients in a transparent and supportive manner, minimizing anxiety while empowering informed decision-making."
+
+🇫🇷 FRANÇAIS :
+"Les prestataires de soins devraient recevoir une formation spécialisée sur la façon de communiquer les scores de risque générés par l'IA aux patientes de manière transparente et bienveillante, minimisant l'anxiété tout en favorisant une prise de décision éclairée."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"[Actors] should receive training on how to..."
+= "[Acteurs] devraient recevoir une formation sur la façon de..."`
+  },
+  {
+    q: "MOVE 4: How to talk about PROSPECTIVE STUDIES? / Comment parler des ÉTUDES PROSPECTIVES ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"Prospective clinical trials are essential to determine whether AI-assisted screening leads to better patient outcomes, including earlier diagnosis, less aggressive treatment, and improved survival rates."
+
+🇫🇷 FRANÇAIS :
+"Des essais cliniques prospectifs sont essentiels pour déterminer si le dépistage assisté par IA conduit à de meilleurs résultats pour les patientes, y compris un diagnostic plus précoce, un traitement moins agressif et des taux de survie améliorés."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"[Studies] are essential to determine whether..."
+= "[Études] sont essentiels pour déterminer si..."`
+  },
+  {
+    q: "MOVE 4: How to make the TRANSITION to Move 5? / Comment faire la TRANSITION vers Move 5 ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"While these solutions offer promise, their effectiveness will depend on long-term commitment from healthcare systems, researchers, and policymakers."
+
+🇫🇷 FRANÇAIS :
+"Bien que ces solutions soient prometteuses, leur efficacité dépendra d'un engagement à long terme des systèmes de santé, des chercheurs et des décideurs politiques."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"While these solutions offer promise, their effectiveness will depend on..."
+= "Bien que ces solutions soient prometteuses, leur efficacité dépendra de..."`
+  },
+
+  // ==========================================
+  // MOVE 5 - CONCLUSION PHRASES
+  // ==========================================
+  {
+    q: "MOVE 5: How to project into the FUTURE? / Comment projeter vers le FUTUR ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"In the future, AI is likely to play an increasingly important role in personalized medicine, enabling healthcare providers to stratify patients according to their individual risk profiles."
+
+🇫🇷 FRANÇAIS :
+"À l'avenir, l'IA jouera probablement un rôle de plus en plus important dans la médecine personnalisée, permettant aux prestataires de soins de stratifier les patientes selon leurs profils de risque individuels."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"In the future, [topic] is likely to..."
+= "À l'avenir, [sujet] jouera probablement..."`
+  },
+  {
+    q: "MOVE 5: How to give a BALANCED VIEW? / Comment donner une VISION ÉQUILIBRÉE ?",
+    a: `📝 READY-MADE PHRASE / PHRASE PRÊTE :
+
+🇬🇧 ENGLISH:
+"Overall, while AI offers significant opportunities to improve breast cancer detection, it also requires careful implementation to ensure that technology enhances rather than replaces human judgment."
+
+🇫🇷 FRANÇAIS :
+"Dans l'ensemble, bien que l'IA offre des opportunités significatives pour améliorer la détection du cancer du sein, elle nécessite également une mise en œuvre prudente pour garantir que la technologie améliore plutôt qu'elle ne remplace le jugement humain."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"Overall, while [topic] offers [opportunities], it also requires..."
+= "Dans l'ensemble, bien que [sujet] offre [opportunités], il nécessite également..."`
+  },
+  {
+    q: "MOVE 5: What is the PERFECT FINAL SENTENCE? / Quelle est la PHRASE FINALE PARFAITE ?",
+    a: `📝 STRONG FINAL SENTENCE / PHRASE FINALE FORTE :
+
+🇬🇧 ENGLISH:
+"Ultimately, the future of AI in breast cancer diagnosis depends not on choosing between human expertise and artificial intelligence, but on finding the optimal collaboration between the two."
+
+🇫🇷 FRANÇAIS :
+"En fin de compte, l'avenir de l'IA dans le diagnostic du cancer du sein ne dépend pas du choix entre l'expertise humaine et l'intelligence artificielle, mais de la recherche de la collaboration optimale entre les deux."
+
+💡 KEY STRUCTURE / STRUCTURE CLÉ :
+"Ultimately, the future of [topic] depends not on [A], but on [B]."
+= "En fin de compte, l'avenir de [sujet] ne dépend pas de [A], mais de [B]."
+
+🔥 POWERFUL RHETORICAL STRUCTURE!
+🔥 STRUCTURE RHÉTORIQUE PUISSANTE !`
+  },
+
+  // ==========================================
+  // CONNECTEURS ESSENTIELS
+  // ==========================================
+  {
+    q: "What connectors to use to ADD an idea? / Quels connecteurs pour AJOUTER une idée ?",
+    a: `🔗 ADDITION CONNECTORS / CONNECTEURS D'ADDITION :
+
+FURTHERMORE = De plus / En outre
+🇬🇧 "Furthermore, AI can analyze thousands of images rapidly."
+🇫🇷 "De plus, l'IA peut analyser des milliers d'images rapidement."
+
+ADDITIONALLY = De plus / En outre
+🇬🇧 "Additionally, it can detect patterns invisible to the human eye."
+🇫🇷 "De plus, elle peut détecter des motifs invisibles à l'œil humain."
+
+MOREOVER = De plus / Qui plus est
+🇬🇧 "Moreover, the study included over 116,000 women."
+🇫🇷 "Qui plus est, l'étude incluait plus de 116 000 femmes."
+
+💡 All formal and interchangeable - vary them!
+💡 Tous formels et interchangeables - varie-les !`
+  },
+  {
+    q: "What connectors to use for CONTRAST? / Quels connecteurs pour le CONTRASTE ?",
+    a: `🔗 CONTRAST CONNECTORS / CONNECTEURS DE CONTRASTE :
+
+HOWEVER = Cependant / Toutefois
+🇬🇧 "However, significant concerns have emerged."
+🇫🇷 "Cependant, des préoccupations significatives ont émergé."
+→ Start of new sentence / Début de nouvelle phrase
+
+ALTHOUGH = Bien que
+🇬🇧 "Although AI shows promise, limitations remain."
+🇫🇷 "Bien que l'IA soit prometteuse, des limites demeurent."
+→ Same sentence / Même phrase
+
+DESPITE = Malgré
+🇬🇧 "Despite these results, validation is needed."
+🇫🇷 "Malgré ces résultats, une validation est nécessaire."
+→ + noun or gerund / + nom ou gérondif
+
+NEVERTHELESS = Néanmoins
+🇬🇧 "Nevertheless, the findings are significant."
+🇫🇷 "Néanmoins, les résultats sont significatifs."`
+  },
+  {
+    q: "What connectors to use for EXAMPLES? / Quels connecteurs pour les EXEMPLES ?",
+    a: `🔗 EXAMPLE CONNECTORS / CONNECTEURS D'EXEMPLE :
+
+FOR INSTANCE = Par exemple
+🇬🇧 "For instance, the Gjesvik study showed that..."
+🇫🇷 "Par exemple, l'étude de Gjesvik a montré que..."
+
+FOR EXAMPLE = Par exemple
+🇬🇧 "For example, women who developed cancer had higher scores."
+🇫🇷 "Par exemple, les femmes qui ont développé un cancer avaient des scores plus élevés."
+
+SUCH AS = Tel que / Comme
+🇬🇧 "...clinical data such as family history and previous screenings."
+🇫🇷 "...des données cliniques telles que les antécédents familiaux et les dépistages précédents."
+
+TO ILLUSTRATE = Pour illustrer
+🇬🇧 "To illustrate, scores exceeded 80 before diagnosis."
+🇫🇷 "Pour illustrer, les scores dépassaient 80 avant le diagnostic."
+
+💡 EVERY body paragraph MUST have an example!
+💡 CHAQUE paragraphe du body DOIT avoir un exemple !`
+  },
+  {
+    q: "What connectors to use for CONCLUSION? / Quels connecteurs pour CONCLURE ?",
+    a: `🔗 CONCLUSION CONNECTORS / CONNECTEURS DE CONCLUSION :
+
+IN CONCLUSION = En conclusion
+🇬🇧 "In conclusion, AI offers significant opportunities."
+🇫🇷 "En conclusion, l'IA offre des opportunités significatives."
+
+OVERALL = Dans l'ensemble
+🇬🇧 "Overall, while AI offers benefits, risks remain."
+🇫🇷 "Dans l'ensemble, bien que l'IA offre des avantages, des risques demeurent."
+
+ULTIMATELY = En fin de compte
+🇬🇧 "Ultimately, the key lies in collaboration."
+🇫🇷 "En fin de compte, la clé réside dans la collaboration."
+
+TO SUM UP = Pour résumer
+🇬🇧 "To sum up, AI should be used as a supportive tool."
+🇫🇷 "Pour résumer, l'IA devrait être utilisée comme un outil de soutien."`
+  },
+
+  // ==========================================
+  // QUESTIONS POSSIBLES ET RÉPONSES
+  // ==========================================
+  {
+    q: "Possible question: 'Can AI improve breast cancer diagnosis without replacing pathologists?'",
+    a: `🎯 HOW TO ANSWER / COMMENT RÉPONDRE :
+
+MOVE 1: Define AI in diagnosis + context + Gjesvik study
+
+MOVE 2: Why AI is explored
+🇬🇧 Limitations of human eye, interval cancers missed, promising study results
+🇫🇷 Limites de l'œil humain, cancers d'intervalle manqués, résultats prometteurs
+
+MOVE 3: Risks and limitations
+🇬🇧 Population bias, retrospective nature, ethical concerns, over-reliance
+🇫🇷 Biais de population, nature rétrospective, préoccupations éthiques, sur-dépendance
+
+MOVE 4: Balanced solution
+🇬🇧 AI as TOOL (not replacement), validation needed, professional training
+🇫🇷 IA comme OUTIL (pas remplacement), validation nécessaire, formation des professionnels
+
+MOVE 5: Conclusion
+🇬🇧 Human-AI collaboration, personalized medicine, professional remains central
+🇫🇷 Collaboration humain-IA, médecine personnalisée, le professionnel reste central`
+  },
+  {
+    q: "Possible question: 'What are the benefits and risks of using AI in medical diagnosis?'",
+    a: `🎯 HOW TO STRUCTURE / COMMENT STRUCTURER :
+
+✅ BENEFITS (Move 2):
+🇬🇧 
+• Detects patterns invisible to human eye
+• Analyzes thousands of images rapidly
+• Can predict risk before visible symptoms
+• Matches/exceeds clinical prediction models
+
+🇫🇷 
+• Détecte des motifs invisibles à l'œil humain
+• Analyse des milliers d'images rapidement
+• Peut prédire le risque avant les symptômes visibles
+• Égale/dépasse les modèles de prédiction clinique
+
+⚠️ RISKS (Move 3):
+🇬🇧 
+• Population bias
+• Retrospective nature needs validation
+• Patient anxiety from high-risk scores
+• Over-reliance on technology
+
+🇫🇷 
+• Biais de population
+• Nature rétrospective nécessite validation
+• Anxiété des patientes face aux scores élevés
+• Sur-dépendance à la technologie`
+  },
+  {
+    q: "Possible question: 'What ethical considerations arise when using AI in healthcare?'",
+    a: `🎯 ETHICAL CONSIDERATIONS / CONSIDÉRATIONS ÉTHIQUES :
+
+1️⃣ PATIENT ANXIETY / ANXIÉTÉ DES PATIENTES
+🇬🇧 How to communicate high-risk scores when mammogram looks normal?
+🇫🇷 Comment communiquer des scores de risque élevés quand la mammographie semble normale ?
+
+2️⃣ TRANSPARENCY / TRANSPARENCE
+🇬🇧 Patients should understand what AI scores mean
+🇫🇷 Les patientes doivent comprendre ce que signifient les scores IA
+
+3️⃣ EQUITY / ÉQUITÉ
+🇬🇧 AI must be validated on diverse populations
+🇫🇷 L'IA doit être validée sur des populations diverses
+
+4️⃣ PROFESSIONAL RESPONSIBILITY / RESPONSABILITÉ PROFESSIONNELLE
+🇬🇧 Healthcare provider must interpret, not blindly follow AI
+🇫🇷 Le professionnel de santé doit interpréter, pas suivre aveuglément l'IA
+
+5️⃣ HUMAN COMMUNICATION / COMMUNICATION HUMAINE
+🇬🇧 Results must be communicated in an ethical, human way
+🇫🇷 Les résultats doivent être communiqués de manière éthique et humaine`
+  },
+
+  // ==========================================
+  // RAPPELS CLÉS
+  // ==========================================
+  {
+    q: "What is THE KEY MESSAGE of your presentation? / Quel est LE MESSAGE CLÉ de ton exposé ?",
+    a: `🎯 THE KEY MESSAGE / LE MESSAGE CLÉ :
+
+🇬🇧 ENGLISH:
+"AI does not replace the pathologist or radiologist — it provides a score. It is up to the healthcare professional to interpret it, cross-reference it with other data, and communicate results in an ethical, human way adapted to each patient."
+
+🇫🇷 FRANÇAIS :
+"L'IA ne remplace pas le pathologiste ou le radiologue — elle fournit un score. C'est au professionnel de santé de l'interpréter, de le croiser avec d'autres données, et de communiquer les résultats de manière éthique et humaine, adaptée à chaque patiente."
+
+💡 This message must appear throughout ANY essay on this topic!
+💡 Ce message doit transparaître dans TOUT essay sur ce sujet !`
+  },
+  {
+    q: "What are the KEY NUMBERS from the study to remember? / Quels sont les CHIFFRES CLÉS à retenir ?",
+    a: `📊 KEY NUMBERS / CHIFFRES CLÉS :
+
+• 116,000+ women analyzed
+  → Plus de 116 000 femmes analysées
+
+• Period: 2004-2018 (14 years)
+  → Période : 2004-2018 (14 ans)
+
+• Screening interval: 2 years
+  → Intervalle de dépistage : 2 ans
+
+• AI score: 0 to 100
+  → Score IA : 0 à 100
+
+• Score > 80 just before diagnosis
+  → Score > 80 juste avant le diagnostic
+
+• Publication: JAMA Network Open, 2024
+  → Publication : JAMA Network Open, 2024
+
+• Software: Lunit INSIGHT MMG
+  → Logiciel : Lunit INSIGHT MMG
+
+💡 Use these numbers in your examples (EX)!
+💡 Utilise ces chiffres dans tes exemples (EX) !`
+  },
+  {
+    q: "FINAL CHECKLIST: 10 points to verify before submitting / CHECKLIST FINALE : 10 points à vérifier",
+    a: `✅ FINAL CHECKLIST / CHECKLIST FINALE :
+
+☐ Move 1: Definition + context + Gjesvik study mentioned
+   → Définition + contexte + étude Gjesvik mentionnée
+
+☐ Move 2: Motivations + study results with numbers
+   → Motivations + résultats de l'étude avec chiffres
+
+☐ Move 3: Population bias + retrospective nature + ethics
+   → Biais de population + nature rétrospective + éthique
+
+☐ Move 4: AI = tool + validation + training
+   → IA = outil + validation + formation
+
+☐ Move 5: Future vision + strong final sentence
+   → Vision future + phrase finale forte
+
+☐ TS-SS-EX-L structure in each paragraph
+   → Structure TS-SS-EX-L dans chaque paragraphe
+
+☐ No "I think" or personal opinion
+   → Aucun "I think" ou opinion personnelle
+
+☐ No contractions (do not, cannot, will not)
+   → Aucune contraction
+
+☐ Varied connectors (not always "However")
+   → Connecteurs variés
+
+☐ Concrete examples with study reference
+   → Exemples concrets avec référence à l'étude`
+  },
+  {
+    q: "What is the name of the AI software used in the study? / Comment s'appelle le logiciel d'IA ?",
+    a: `🤖 AI SOFTWARE / LOGICIEL IA :
+
+NAME / NOM : Lunit INSIGHT MMG
+
+HOW IT WORKS / FONCTIONNEMENT :
+🇬🇧 
+• Assigns a score from 0 to 100
+• Analyzes ONLY the pixels of the image
+• Does NOT use: medical history, patient age, family history
+
+🇫🇷 
+• Attribue un score de 0 à 100
+• Analyse UNIQUEMENT les pixels de l'image
+• N'utilise PAS : antécédents médicaux, âge de la patiente, historique familial
+
+💡 IMPORTANT:
+🇬🇧 AI bases its prediction ONLY on the image, demonstrating its ability to detect invisible patterns
+🇫🇷 L'IA base sa prédiction UNIQUEMENT sur l'image, démontrant sa capacité à détecter des motifs invisibles`
+  },
+  {
+    q: "How to START any essay on this topic? / Comment COMMENCER tout essay sur ce sujet ?",
+    a: `📝 UNIVERSAL STARTING FORMULA / FORMULE DE DÉPART UNIVERSELLE :
+
+🇬🇧 ENGLISH:
+"[Topic] refers to [simple definition]. In recent years, this phenomenon has gained considerable attention due to [reason]. A recent study by [author], published in [journal] in [year], examined [research question]. This development has raised important questions about [issue]. To understand [topic], it is essential to examine the underlying motivations, potential risks, and possible solutions."
+
+🇫🇷 FRANÇAIS :
+"[Sujet] fait référence à [définition simple]. Ces dernières années, ce phénomène a attiré une attention considérable en raison de [raison]. Une étude récente de [auteur], publiée dans [journal] en [année], a examiné [question de recherche]. Cette évolution a soulevé des questions importantes sur [enjeu]. Pour comprendre [sujet], il est essentiel d'examiner les motivations sous-jacentes, les risques potentiels et les solutions possibles."
+
+💡 This formula works for ANY topic!
+💡 Cette formule fonctionne pour TOUT sujet !`
+  },
+  {
+    q: "How to END any essay MEMORABLY? / Comment FINIR tout essay de manière MÉMORABLE ?",
+    a: `📝 MEMORABLE CLOSING FORMULAS / FORMULES DE CLÔTURE MÉMORABLES :
+
+1️⃣ FUTURE VISION:
+🇬🇧 "The future of [topic] depends on the choices made today."
+🇫🇷 "L'avenir de [sujet] dépend des choix faits aujourd'hui."
+
+2️⃣ CALL FOR COLLABORATION:
+🇬🇧 "Only through collective effort can [goal] be achieved."
+🇫🇷 "Ce n'est que par un effort collectif que [objectif] peut être atteint."
+
+3️⃣ BALANCE:
+🇬🇧 "Ultimately, the key lies in finding a balance between [X] and [Y]."
+🇫🇷 "En fin de compte, la clé réside dans la recherche d'un équilibre entre [X] et [Y]."
+
+4️⃣ NOT A vs B, BUT COLLABORATION:
+🇬🇧 "The future depends not on choosing between [A] and [B], but on finding the optimal collaboration between the two."
+🇫🇷 "L'avenir ne dépend pas du choix entre [A] et [B], mais de la recherche de la collaboration optimale entre les deux."
+
+💡 Choose ONE strong formula and adapt it to your topic!
+💡 Choisis UNE formule forte et adapte-la à ton sujet !`
+  }
+];
+
+;
+
+/* =============================
+   FLASHCARDS LOGIC
+   ============================= */
+let fcState = {
+  cards: CARDS,
+  order: CARDS.map((_, i) => i),
+  index: 0,
+  score: 0,
+  toReview: new Set(),
+  flipped: false,
+  onlyTodo: false
+};
+
+const fcEls = {
+  card: $('#fcCard'),
+  question: $('#fcQuestion'),
+  answer: $('#fcAnswer'),
+  score: $('#score'),
+  cardIndex: $('#cardIndex'),
+  cardTotal: $('#cardTotal'),
+  todoCount: $('#todoCount'),
+  progressBar: $('#progressBar'),
+  onlyTodo: $('#onlyTodo')
+};
+
+function updateFCDisplay() {
+  const idx = fcState.order[fcState.index];
+  const card = fcState.cards[idx];
+  
+  if (!card || fcState.order.length === 0) {
+    fcEls.question.textContent = "🎉 Toutes les cartes 'à revoir' sont maîtrisées !";
+    fcEls.answer.textContent = "Décoche le filtre ou mélange pour recommencer.";
+  } else {
+    fcEls.question.textContent = card.q;
+    fcEls.answer.textContent = card.a;
+  }
+  
+  fcEls.cardIndex.textContent = fcState.index + 1;
+  fcEls.cardTotal.textContent = fcState.order.length;
+  fcEls.score.textContent = fcState.score;
+  fcEls.todoCount.textContent = fcState.toReview.size;
+  
+  const progress = fcState.order.length > 0 
+    ? (fcState.index / fcState.order.length) * 100 
+    : 100;
+  fcEls.progressBar.style.width = Math.max(2, progress) + '%';
+  
+  fcState.flipped = false;
+  fcEls.card.classList.remove('flipped');
+}
+
+function flipCard() {
+  fcState.flipped = !fcState.flipped;
+  fcEls.card.classList.toggle('flipped');
+}
+
+function nextCard() {
+  if (fcState.order.length === 0) return;
+  fcState.index = (fcState.index + 1) % fcState.order.length;
+  updateFCDisplay();
+}
+
+function prevCard() {
+  if (fcState.order.length === 0) return;
+  fcState.index = (fcState.index - 1 + fcState.order.length) % fcState.order.length;
+  updateFCDisplay();
+}
+
+function shuffleCards() {
+  fcState.order = CARDS.map((_, i) => i);
+  for (let i = fcState.order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [fcState.order[i], fcState.order[j]] = [fcState.order[j], fcState.order[i]];
+  }
+  fcState.index = 0;
+  fcState.onlyTodo = false;
+  if (fcEls.onlyTodo) fcEls.onlyTodo.checked = false;
+  updateFCDisplay();
+}
+
+function markKnown() {
+  fcState.score++;
+  fcState.toReview.delete(fcState.order[fcState.index]);
+  nextCard();
+}
+
+function markReview() {
+  fcState.toReview.add(fcState.order[fcState.index]);
+  nextCard();
+}
+
+function toggleOnlyTodo(checked) {
+  fcState.onlyTodo = checked;
+  if (checked) {
+    fcState.order = Array.from(fcState.toReview);
+  } else {
+    fcState.order = CARDS.map((_, i) => i);
+  }
+  fcState.index = 0;
+  updateFCDisplay();
+}
+
+function speakText() {
+  const text = fcState.flipped ? fcEls.answer.textContent : fcEls.question.textContent;
+  try {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utterance);
+  } catch (e) {}
+}
+
+// Event listeners
+$('#fcCard')?.addEventListener('click', flipCard);
+$('#btnFlip')?.addEventListener('click', flipCard);
+$('#btnNext')?.addEventListener('click', nextCard);
+$('#btnPrev')?.addEventListener('click', prevCard);
+$('#btnShuffle')?.addEventListener('click', shuffleCards);
+$('#btnKnow')?.addEventListener('click', markKnown);
+$('#btnAgain')?.addEventListener('click', markReview);
+$('#btnSpeak')?.addEventListener('click', speakText);
+$('#onlyTodo')?.addEventListener('change', (e) => toggleOnlyTodo(e.target.checked));
+
+// Keyboard shortcuts
+window.addEventListener('keydown', (e) => {
+  if (['INPUT', 'TEXTAREA'].includes(e.target?.tagName)) return;
+  
+  switch (e.code) {
+    case 'Space':
+      e.preventDefault();
+      flipCard();
+      break;
+    case 'ArrowRight':
+      nextCard();
+      break;
+    case 'ArrowLeft':
+      prevCard();
+      break;
+    case 'KeyJ':
+      markKnown();
+      break;
+    case 'KeyK':
+      markReview();
+      break;
+  }
+});
+
+// Initialize
+updateFCDisplay();
+</script>
+</body>
+</html>
